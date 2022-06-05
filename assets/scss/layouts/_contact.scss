@@ -1,0 +1,165 @@
+.contact {
+	overflow: hidden;
+	padding: 200px 0px;
+	z-index: 1;
+	position: relative;
+
+	&-content {
+		display: grid;
+		gap: 40px;
+		grid-template-columns: repeat(2, 1fr);
+
+		@include max(767px) {
+			grid-template-columns: 1fr;
+		}
+	}
+
+	&-overlay {
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		z-index: -1;
+		position: absolute;
+
+		img {
+			opacity: 0.2;
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+	}
+
+	&-heading {
+		font-size: 46px;
+		line-height: 35px;
+		margin-bottom: 40px;
+		font-family: "Book Antiqua";
+
+		@include max(767px) {
+			font-size: 28px;
+			line-height: 46px;
+			margin-bottom: 24px;
+		}
+	}
+
+	&-information {
+		overflow: hidden;
+		position: relative;
+		padding: 30px 60px;
+
+		@include max(767px) {
+			padding: 30px;
+		}
+
+		ul {
+			margin: 0;
+			padding: 0;
+			margin-bottom: 24px;
+			li {
+				h2 {
+					color: $primary;
+					font-size: 28px;
+					line-height: 35px;
+					font-family: "Book Antiqua";
+
+					@include max(767px) {
+						font-size: 22px;
+					}
+				}
+
+				p {
+					color: #000;
+					font-size: 20px;
+					font-weight: 100;
+					line-height: 35px;
+					max-width: 320px;
+
+					@include max(767px) {
+						font-size: 16px;
+						line-height: 22px;
+					}
+				}
+			}
+		}
+	}
+
+	&-form {
+		.contact-field {
+			margin-bottom: 32px;
+			label {
+				display: block;
+				font-size: 28px;
+				line-height: 35px;
+				margin-bottom: 12px;
+				font-family: "Book Antiqua";
+				@include max(767px) {
+					font-size: 20px;
+					line-height: 28px;
+				}
+			}
+
+			.input {
+				width: 100%;
+				position: relative;
+				overflow: hidden;
+
+				input {
+					font-size: 16px;
+					padding: 16px 8px;
+					width: inherit;
+					background-color: #dddfdf;
+				}
+			}
+			textarea {
+				border: 0;
+				width: 100%;
+				font-size: 16px;
+				min-height: 160px;
+				padding: 12px 8px;
+				background-color: #dddfdf;
+			}
+		}
+		.btn {
+			font-size: 18px;
+			line-height: 24px;
+			font-weight: 300;
+		}
+	}
+
+	&-shapes {
+		.item {
+			z-index: -2;
+			position: absolute;
+
+			&-one {
+				top: 40px;
+				right: 24px;
+
+				@include max(767px) {
+					top: -160px;
+					right: -90px;
+				}
+			}
+
+			&-two {
+				top: 50%;
+				right: -360px;
+				transform: translateY(-50%);
+				@include max(575px) {
+					display: none;
+				}
+			}
+
+			&-three {
+				left: -120px;
+				bottom: -260px;
+
+				@include max(575px) {
+					bottom: -340px;
+					left: -240px;
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,92 @@
+.service {
+	overflow: hidden;
+	padding: 280px 0px;
+	position: relative;
+	background-color: #f7f7f7;
+	@include max(991px) {
+		padding: 160px 0px;
+	}
+
+	&-content {
+		display: grid;
+		gap: 12px;
+		grid-template-columns: repeat(3, 1fr);
+
+		@include max(991px) {
+			grid-template-columns: repeat(2, 1fr);
+		}
+
+		@include max(575px) {
+			grid-template-columns: 1fr;
+		}
+	}
+
+	&-box {
+		text-align: center;
+		.img {
+			width: 176px;
+			height: 176px;
+			margin: 0px auto;
+			overflow: hidden;
+			position: relative;
+			margin-bottom: 24px;
+
+			img {
+				width: 100%;
+				height: 100%;
+				object-fit: contain;
+			}
+		}
+
+		.info {
+			h2 {
+				font-size: 32px;
+				font-weight: 100;
+				line-height: 38px;
+				margin-bottom: 12px;
+
+				@include max(767px) {
+					font-size: 24px;
+					line-height: 28px;
+				}
+			}
+
+			p {
+				font-size: 20px;
+				font-weight: 100;
+				line-height: 24px;
+
+				@include max(767px) {
+					font-size: 16px;
+				}
+			}
+		}
+	}
+
+	&-overlay {
+		.item {
+			position: absolute;
+			z-index: -1;
+			&-one {
+				top: -280px;
+				left: -120px;
+			}
+
+			&-two {
+				right: -160px;
+				bottom: -300px;
+
+				@include max(991px) {
+					display: none;
+				}
+			}
+		}
+	}
+
+	.brand-heading {
+		left: 50%;
+		bottom: 24px;
+		position: absolute;
+		transform: translateX(-50%);
+	}
+}

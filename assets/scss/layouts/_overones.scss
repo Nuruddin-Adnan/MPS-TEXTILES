@@ -1,0 +1,122 @@
+.overones {
+	z-index: 1;
+	overflow: hidden;
+	position: relative;
+	padding: 120px 0px;
+	padding-bottom: 180px;
+
+	&-content {
+		h2 {
+			color: rgba(0, 0, 0, 0.876);
+			font-size: 46px;
+			line-height: 36px;
+			margin-bottom: 60px;
+			text-transform: capitalize;
+			font-family: "Book Antiqua";
+
+			@include max(1200px) {
+				margin-bottom: 24px;
+			}
+		}
+
+		blockquote {
+			margin-bottom: 60px;
+
+			h6 {
+				font-size: 32px;
+				line-height: 35px;
+				margin-bottom: 8px;
+				text-transform: capitalize;
+			}
+
+			p {
+				color: #000;
+				font-weight: 100;
+				font-size: 20px;
+				line-height: 35px;
+
+				@include max(1380px) {
+					font-size: 16px;
+					line-height: 26px;
+				}
+
+				span {
+					color: $primary;
+				}
+			}
+
+			ul {
+				margin: 0;
+				li {
+					display: flex;
+					margin-bottom: 6px;
+					align-items: center;
+
+					@include max(767px) {
+						align-items: flex-start;
+						flex-direction: column;
+					}
+				}
+
+				span {
+					color: $primary;
+					margin-right: 4px;
+				}
+
+				p {
+					margin: 0;
+				}
+			}
+		}
+	}
+
+	&-overlay {
+		.item {
+			z-index: -1;
+			position: absolute;
+
+			&-one {
+				top: 60px;
+				right: 12px;
+
+				@include max(1380px) {
+					top: -120px;
+					right: -120px;
+				}
+			}
+
+			&-two {
+				top: 380px;
+				right: -400px;
+			}
+
+			&-three {
+				top: 50%;
+				left: -24px;
+				transform: translateY(-50%);
+
+				@include max(1680px) {
+					display: none;
+				}
+			}
+
+			&-four {
+				left: -300px;
+				top: calc(50% + 260px);
+
+				@include max(575px) {
+					display: none;
+				}
+			}
+
+			&-five {
+				right: -120px;
+				bottom: 120px;
+
+				@include max(767px) {
+					bottom: -260px;
+				}
+			}
+		}
+	}
+}

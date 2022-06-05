@@ -1,0 +1,10 @@
+.country-select {
+	font-size: 0px;
+	line-height: 0px;
+}
+.country-list {
+	flex-direction: column;
+	.country {
+		margin: 0 !important;
+	}
+}

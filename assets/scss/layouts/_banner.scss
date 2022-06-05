@@ -1,0 +1,107 @@
+.banner {
+	height: 700px;
+	overflow: hidden;
+	position: relative;
+
+	@include max(767px) {
+		height: 450px;
+	}
+
+	&-box {
+		left: 0;
+		top: 50%;
+		color: #000;
+		width: 470px;
+		padding: 50px;
+		position: absolute;
+		background-color: #fff;
+		transform: translateY(-50%);
+
+		@include max(575px) {
+			width: 100%;
+			height: auto;
+			padding: 24px;
+		}
+
+		span {
+			color: #000;
+			font-size: 20px;
+			line-height: 24px;
+			font-weight: 100;
+		}
+
+		h2 {
+			font-size: 42px;
+			line-height: 52px;
+			font-family: "Book Antiqua";
+			margin-bottom: 24px;
+
+			@include max(767px) {
+				font-size: 32px;
+				line-height: 42px;
+			}
+		}
+
+		button {
+			opacity: 0.8;
+			width: 120px;
+			font-size: 28px;
+			font-weight: 100;
+			line-height: 34px;
+			display: inline-block;
+			border: 1px solid #000;
+			text-transform: capitalize;
+			transition: all 0.3s linear;
+
+			@include max(767px) {
+				font-size: 18px;
+			}
+
+			&:hover,
+			&:focus {
+				color: #fff;
+				background-color: #000;
+			}
+		}
+
+		a {
+			display: flex;
+			width: 40px;
+			height: 50px;
+			margin: auto;
+			align-items: center;
+			justify-content: center;
+			border: 2px solid #000;
+			text-align: center;
+			cursor: pointer;
+		}
+	}
+}
+
+.promo-banner {
+	z-index: 1;
+	overflow: hidden;
+	padding: 90px 0px;
+	position: relative;
+
+	&__content {
+		width: 100%;
+		height: 270px;
+		display: inline-block;
+
+		img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+	}
+
+	&__overlay {
+		.item {
+			left: -20px;
+			bottom: -180px;
+			z-index: -1;
+			position: absolute;
+		}
+	}
+}

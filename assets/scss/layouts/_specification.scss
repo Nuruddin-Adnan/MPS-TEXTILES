@@ -1,0 +1,115 @@
+.specification {
+	padding-top: 60px;
+	position: relative;
+	padding-bottom: 220px;
+	background-color: #eef0f0;
+
+	@include max(1200px) {
+		padding: 60px 0px;
+	}
+
+	&-info {
+		h2 {
+			font-size: 46px;
+			line-height: 36px;
+			margin-bottom: 30px;
+			font-family: "Book Antiqua";
+			text-transform: capitalize;
+			@include max(767px) {
+				font-size: 32px;
+				line-height: 42px;
+			}
+		}
+
+		.info {
+			&-item {
+				display: flex;
+				margin-bottom: 30px;
+				@include max(767px) {
+					margin-bottom: 12px;
+					justify-content: space-between;
+				}
+				.left {
+					width: 420px;
+
+					@include max(767px) {
+						width: 300px;
+					}
+
+					h2 {
+						color: #333;
+						font-size: 20px;
+						font-weight: 100;
+						line-height: 30px;
+					}
+				}
+
+				.right {
+					p {
+						margin: 0;
+						font-weight: 100;
+						font-size: 20px;
+						line-height: 24px;
+						white-space: nowrap;
+					}
+				}
+			}
+		}
+	}
+
+	&-documentation {
+		padding-left: 24px;
+		border-left: 1px solid #000;
+
+		@include max(991px) {
+			border: 0;
+			padding: 0;
+			padding-top: 24px;
+			border-top: 1px solid #000;
+		}
+
+		h2 {
+			font-size: 46px;
+			line-height: 36px;
+			margin-bottom: 30px;
+			font-family: "Book Antiqua";
+			text-transform: capitalize;
+
+			@include max(767px) {
+				font-size: 32px;
+				line-height: 42px;
+			}
+		}
+
+		.documentation-item {
+			margin-bottom: 40px;
+			h2 {
+				color: #333;
+				font-size: 30px;
+				font-weight: 100;
+				line-height: 36px;
+				margin-bottom: 24px;
+			}
+
+			ul {
+				li {
+					margin-bottom: 12px;
+					button {
+						padding: 6px 8px;
+						font-size: 20px;
+						line-height: 24px;
+						overflow: hidden;
+						font-weight: 100;
+						position: relative;
+						display: inline-block;
+						border: 1px solid #000;
+
+						@include max(767px) {
+							font-size: 16px;
+						}
+					}
+				}
+			}
+		}
+	}
+}

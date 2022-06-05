@@ -1,0 +1,47 @@
+.brand {
+	&-heading {
+		font-size: 50px;
+		line-height: 60px;
+		font-weight: 100;
+		text-align: center;
+		margin-bottom: 32px;
+		white-space: nowrap;
+
+		@include max(991px) {
+			font-size: 32px;
+			line-height: 48px;
+		}
+	}
+}
+
+.brand-slider {
+	padding: 24px 0px;
+	background: #fff;
+	box-shadow: -4px 16px 20px -9px rgba(0, 0, 0, 0.192);
+
+	.swiper {
+		&-wrapper {
+			display: flex;
+			align-items: center;
+		}
+
+		&-slide {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+
+		&-button-next,
+		&-button-prev {
+			color: #fff;
+			background-color: #121212;
+			svg {
+				color: #fff;
+			}
+			&::after,
+			&::before {
+				display: none;
+			}
+		}
+	}
+}
