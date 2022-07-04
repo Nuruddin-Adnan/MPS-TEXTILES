@@ -1,0 +1,101 @@
+#cart-right {
+    .product-cart {
+        max-height: 65vh;
+        overflow: auto;
+        padding-right: 20px;
+
+        @include max(575px) {
+            max-height: 60vh;
+        }
+
+        /* width */
+        &::-webkit-scrollbar {
+            width: 7px;
+        }
+
+        /* Track */
+        &::-webkit-scrollbar-track {
+            background: #E6E6E6;
+            border-radius: 10px;
+        }
+
+        /* Handle */
+        &::-webkit-scrollbar-thumb {
+            background: #B3B3B3;
+            border-radius: 10px;
+        }
+
+        /* Handle on hover */
+        &::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
+
+        .cart-item {
+            margin-bottom: 40px;
+
+            .product-img {
+                width: 100px;
+                margin-right: 20px;
+
+                @include max(575px) {
+                    width: 70px;
+                }
+            }
+
+            .product {
+                &-description {
+                    font-weight: 300;
+                    margin-bottom: 10px;
+                    color: #000;
+                    display: block;
+                }
+
+                &-quantity-box {
+                    button {
+                        border: 1.5px solid #000;
+                        width: 20px;
+                        height: 20px;
+                        line-height: 10px;
+
+                        &:hover {
+                            color: #fff;
+                            background-color: rgba(0, 0, 0, 0.8);
+                        }
+                    }
+
+                    .product-quantity {
+                        margin: 0 10px;
+                    }
+                }
+            }
+        }
+    }
+
+    .cart-footer {
+        position: absolute;
+        bottom: 30px;
+        width: calc(100% - 40px);
+
+        .separator {
+            text-align: center;
+            border-block: 1px solid #000;
+            text-align: center;
+            padding-block: 7px;
+            font-size: 12px;
+            font-weight: 300;
+        }
+
+        .btn-border {
+            border: 1px solid #000;
+            padding: 8px 15px;
+            display: inline-block;
+            color: #000;
+
+            &:hover {
+                background-color: #000;
+                color: #fff;
+            }
+        }
+    }
+
+}

@@ -1,669 +1,791 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>MPS TEXTiles</title>
-		<!-- Favicon -->
-		<!-- <link rel="icon" type="image/png" sizes="16x16" href=""> -->
-		<link rel="stylesheet" href="assets/css/swiper-bundle.min.css" />
-		<!-- Bootstrap -->
-		<link rel="stylesheet" href="assets/css/bootstrap.min.css" />
-		<link rel="stylesheet" href="assets/css/countrySelect.min.css" />
-		<link rel="stylesheet" href="assets/css/nouislider.min.css" />
-		<!-- Main css -->
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<link rel="stylesheet" href="assets/css/main.css.map" />
-	</head>
 
-	<body>
-		<!-- header section start  -->
-		<header class="header">
-			<!-- Top Content -->
-			<div class="header-top__content">
-				<div class="container">
-					<div>
-						<!-- brand logo -->
-						<a href="index.html" class="logo">
-							<img
-								src="assets/images/logo.png"
-								alt="brand-logo"
-								class="img-fluid"
-							/>
-						</a>
-						<!-- Actions  -->
-						<div class="header-actions">
-							<ul>
-								<li>
-									<button
-										type="button"
-										data-bs-toggle="modal"
-										data-bs-target="#searchModal"
-									>
-										<img
-											src="assets/images/icons/magnifying-glass.svg"
-											alt="icon"
-										/>
-									</button>
-								</li>
-								<li class="dropdown">
-									<button
-										class="dropdown-toggle"
-										type="button"
-										id="userDropOne"
-										data-bs-toggle="dropdown"
-										aria-expanded="false"
-									>
-										<img
-											src="assets/images/icons/user.svg"
-											alt="icon"
-										/>
-									</button>
-									<div class="dropdown-menu" aria-labelledby="userDropOne">
-										<ul>
-											<li>
-												<a href="#"> Drop Item </a>
-											</li>
-											<li>
-												<a href="#"> Drop Item </a>
-											</li>
-										</ul>
-									</div>
-								</li>
-								<li class="dropdown">
-									<button
-										class="dropdown-toggle"
-										type="button"
-										id="userDropTwo"
-										data-bs-toggle="dropdown"
-										aria-expanded="false"
-									>
-										<img
-											src="assets/images/icons/shopping-cart.svg"
-											alt="icon"
-										/>
-									</button>
-									<div class="dropdown-menu" aria-labelledby="userDropTwo">
-										<ul>
-											<li>
-												<a href="#"> Drop Item </a>
-											</li>
-											<li>
-												<a href="#"> Drop Item </a>
-											</li>
-										</ul>
-									</div>
-								</li>
-								<li>
-									<input id="country_selector" type="text" />
-								</li>
-							</ul>
-						</div>
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>MPS TEXTiles</title>
+	<!-- Favicon -->
+	<!-- <link rel="icon" type="image/png" sizes="16x16" href=""> -->
+	<link rel="stylesheet" href="assets/css/swiper-bundle.min.css" />
+	<!-- Bootstrap -->
+	<link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+	<link rel="stylesheet" href="assets/css/countrySelect.min.css" />
+	<link rel="stylesheet" href="assets/css/nouislider.min.css" />
+	<!-- Main css -->
+	<link rel="stylesheet" href="assets/css/main.css" />
+	<link rel="stylesheet" href="assets/css/main.css.map" />
+</head>
+
+<body>
+	<!-- header section start  -->
+	<header class="header">
+		<!-- Top Content -->
+		<div class="header-top__content">
+			<div class="container">
+				<div>
+					<!-- brand logo -->
+					<a href="index.html" class="logo">
+						<img src="assets/images/logo.png" alt="brand-logo" class="img-fluid" />
+					</a>
+					<!-- Actions  -->
+					<div class="header-actions">
+						<ul>
+							<li>
+								<button type="button" data-bs-toggle="modal" data-bs-target="#searchModal">
+									<img src="assets/images/icons/magnifying-glass.svg" alt="icon" />
+								</button>
+							</li>
+							<li class="dropdown">
+								<button class="dropdown-toggle" type="button" id="userDropOne" data-bs-toggle="dropdown"
+									aria-expanded="false">
+									<img src="assets/images/icons/user.svg" alt="icon" />
+								</button>
+								<div class="dropdown-menu" aria-labelledby="userDropOne">
+									<ul>
+										<li>
+											<a href="#"> Drop Item </a>
+										</li>
+										<li>
+											<a href="#"> Drop Item </a>
+										</li>
+									</ul>
+								</div>
+							</li>
+							<li class="dropdown">
+								<button data-bs-toggle="offcanvas" data-bs-target="#cart-right"
+									aria-controls="cart-right">
+									<img src="assets/images/icons/shopping-cart.svg" alt="icon" />
+								</button>
+							</li>
+							<li>
+								<input id="country_selector" type="text" />
+							</li>
+						</ul>
 					</div>
 				</div>
 			</div>
-			<!-- bottom content  -->
-			<div class="header-bottom__content">
-				<div class="container position-relative">
-					<ul class="menu">
+		</div>
+		<!-- bottom content  -->
+		<div class="header-bottom__content">
+			<div class="container position-relative">
+				<ul class="menu">
 
-						<li class="menu-item d-block d-lg-none">
-							<!-- megamenu dropdown small screen starts -->
-							<a class="nav-item" data-bs-toggle="offcanvas" href="#sideMegamenu" role="button" aria-controls="sideMegamenu">
-								Producten
-							</a>
-						</li>
+					<li class="menu-item d-block d-lg-none">
 						<!-- megamenu dropdown small screen starts -->
+						<a class="nav-item" data-bs-toggle="offcanvas" href="#sideMegamenu" role="button"
+							aria-controls="sideMegamenu">
+							Producten
+						</a>
+					</li>
+					<!-- megamenu dropdown small screen starts -->
 
-						<li class="menu-item d-none d-lg-block">
-							<a	id="megaMenuButton" class="nav-item" data-bs-toggle="collapse" href="#megaMenu" aria-expanded="false" aria-controls="megaMenu">
-								Producten
-							</a>
-						</li>
+					<li class="menu-item d-none d-lg-block">
+						<a id="megaMenuButton" class="nav-item" data-bs-toggle="collapse" href="#megaMenu"
+							aria-expanded="false" aria-controls="megaMenu">
+							Producten
+						</a>
+					</li>
 
-						<li class="menu-item">
-							<a class="nav-item" href="overones.html">Over Ons</a>
-						</li>
-						<li class="menu-item">
-							<a class="nav-item" href="contact.html">Contact</a>
-						</li>
-					</ul>
-					
-					<!-- megamenu start -->
-					<div id="megaMenu" class="accordion-collapse mega-menu-desktop collapse" aria-labelledby="megaMenuButton">
-						<div class="accordion-body p-4">
-						
-							<div class="row">
-								<div class="nav flex-column nav-pills col-4 col-xxl-3 px-4 parent-menu" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-									
-									<button class="nav-link" id="v-pills-Dekbedovertrek-tab" data-bs-toggle="pill" data-bs-target="#v-pills-Dekbedovertrek" type="button" role="tab" aria-controls="v-pills-Dekbedovertrek" aria-selected="true">Dekbedovertrek
-									</button>
-		
-									<button class="nav-link" id="v-pills-Dekbed-tab" data-bs-toggle="pill" data-bs-target="#v-pills-Dekbed" type="button" role="tab" aria-controls="v-pills-Dekbed" aria-selected="true">Dekbed
-									</button>
-		
-									<button class="nav-link" id="v-pills-Hoeslaken-tab" data-bs-toggle="pill" data-bs-target="#v-pills-Hoeslaken" type="button" role="tab" aria-controls="v-pills-Hoeslaken" aria-selected="true">Hoeslaken
-									</button>
-		
-									<button class="nav-link" id="v-pills-Hoofdkussen-tab" data-bs-toggle="pill" data-bs-target="#v-pills-Hoofdkussen" type="button" role="tab" aria-controls="v-pills-Hoofdkussen" aria-selected="true">Hoofdkussen
-									</button>
-		
-									<button class="nav-link" id="v-pills-Topper-tab" data-bs-toggle="pill" data-bs-target="#v-pills-Topper" type="button" role="tab" aria-controls="v-pills-Topper" aria-selected="true">Topper
-									</button>
-									
-									<button class="nav-link" id="v-pills-Huisvesting-tab" data-bs-toggle="pill" data-bs-target="#v-pills-Huisvesting" type="button" role="tab" aria-controls="v-pills-Huisvesting" aria-selected="true">Huisvesting
-									</button>
-		
-									<button class="nav-link" id="v-pills-Bedsprei-tab" data-bs-toggle="pill" data-bs-target="#v-pills-Bedsprei" type="button" role="tab" aria-controls="v-pills-Bedsprei" aria-selected="true">Bedsprei
-									</button>
-		
-								</div>
-		
-								<div class="tab-content col-8 col-xxl-9" id="v-pills-tabContent">
-									<div class="tab-pane fade show" id="v-pills-Dekbedovertrek" role="tabpanel" aria-labelledby="v-pills-Dekbedovertrek-tab">
-										<div class="row">
-											<div class="col-4 ps-5 pe-4 shoort-column">
-												<ul>
-													<li><h3>Soort</h3></li>
-													<li><a href="#">Punt kussen</a></li>
-													<li><a href="#">Box kussen</a></li>
-													<li><a href="#">Ortho kussen   </a></li>
-												</ul>
-											</div>
-											<div class="col-4 ps-5 pe-4 vulling-column">
-												<ul>
-													<li><h3>Vulling</h3></li>
-													<li><a href="#">Synthetisch</a></li>
-													<li><a href="#">Kapok</a></li>
-													<li><a href="#">Traagschuim</a></li>
-													<li><a href="#">Dons</a></li>
-													<li><a href="#">Dons veren</a></li>
-													<li><a href="#">Veren</a></li>
-													<li><a href="#">Schapen wol</a></li>
-													<li><a href="#">Latex</a></li>
-													<li><a href="#">Latex Ilke</a></li>
-												</ul>
-											</div>
-											<div class="col-4 ps-5 pe-4">
-												<ul>
-													<li><h3>Merk</h3></li>
-													<li><a href="#">Zydante Swiss Tech</a></li>
-													<li><a href="#">Dream Fit</a></li>
-													<li><a href="#">H2O</a></li>
-													<li><a href="#">Cool Sleeper</a></li>
-													<li><a href="#">Dr. Fit</a></li>
-												</ul>
-											</div>
-										</div>
-									</div>
-		
-									<div class="tab-pane fade show" id="v-pills-Dekbed" role="tabpanel" aria-labelledby="v-pills-Dekbed-tab">
-										<div class="row">
-											<div class="col-4 ps-5 pe-4 shoort-column">
-												<ul>
-													<li><h3>Soort</h3></li>
-													<li><a href="#">Punt kussen</a></li>
-													<li><a href="#">Box kussen</a></li>
-													<li><a href="#">Ortho kussen   </a></li>
-												</ul>
-											</div>
-											<div class="col-4 ps-5 pe-4 vulling-column">
-												<ul>
-													<li><h3>Vulling</h3></li>
-													<li><a href="#">Synthetisch</a></li>
-													<li><a href="#">Kapok</a></li>
-													<li><a href="#">Traagschuim</a></li>
-													<li><a href="#">Dons</a></li>
-													<li><a href="#">Dons veren</a></li>
-													<li><a href="#">Veren</a></li>
-													<li><a href="#">Schapen wol</a></li>
-													<li><a href="#">Latex</a></li>
-													<li><a href="#">Latex Ilke</a></li>
-												</ul>
-											</div>
-											<div class="col-4 ps-5 pe-4">
-												<ul>
-													<li><h3>Merk</h3></li>
-													<li><a href="#">Zydante Swiss Tech</a></li>
-													<li><a href="#">Dream Fit</a></li>
-													<li><a href="#">H2O</a></li>
-													<li><a href="#">Cool Sleeper</a></li>
-													<li><a href="#">Dr. Fit</a></li>
-												</ul>
-											</div>
-										</div>
-									</div>
-		
-									<div class="tab-pane fade show" id="v-pills-Hoeslaken" role="tabpanel" aria-labelledby="v-pills-Hoeslaken-tab">
-										<div class="row">
-											<div class="col-4 ps-5 pe-4 shoort-column">
-												<ul>
-													<li><h3>Soort</h3></li>
-													<li><a href="#">Punt kussen</a></li>
-													<li><a href="#">Box kussen</a></li>
-													<li><a href="#">Ortho kussen   </a></li>
-												</ul>
-											</div>
-											<div class="col-4 ps-5 pe-4 vulling-column">
-												<ul>
-													<li><h3>Vulling</h3></li>
-													<li><a href="#">Synthetisch</a></li>
-													<li><a href="#">Kapok</a></li>
-													<li><a href="#">Traagschuim</a></li>
-													<li><a href="#">Dons</a></li>
-													<li><a href="#">Dons veren</a></li>
-													<li><a href="#">Veren</a></li>
-													<li><a href="#">Schapen wol</a></li>
-													<li><a href="#">Latex</a></li>
-													<li><a href="#">Latex Ilke</a></li>
-												</ul>
-											</div>
-											<div class="col-4 ps-5 pe-4">
-												<ul>
-													<li><h3>Merk</h3></li>
-													<li><a href="#">Zydante Swiss Tech</a></li>
-													<li><a href="#">Dream Fit</a></li>
-													<li><a href="#">H2O</a></li>
-													<li><a href="#">Cool Sleeper</a></li>
-													<li><a href="#">Dr. Fit</a></li>
-												</ul>
-											</div>
-										</div>
-									</div>
-		
-									<div class="tab-pane fade show active" id="v-pills-Hoofdkussen" role="tabpanel" aria-labelledby="v-pills-Hoofdkussen-tab">
-										<div class="row">
-											<div class="col-4 ps-5 pe-4 shoort-column">
-												<ul>
-													<li><h3>Soort</h3></li>
-													<li><a href="#">Punt kussen</a></li>
-													<li><a href="#">Box kussen</a></li>
-													<li><a href="#">Ortho kussen   </a></li>
-												</ul>
-											</div>
-											<div class="col-4 ps-5 pe-4 vulling-column">
-												<ul>
-													<li><h3>Vulling</h3></li>
-													<li><a href="#">Synthetisch</a></li>
-													<li><a href="#">Kapok</a></li>
-													<li><a href="#">Traagschuim</a></li>
-													<li><a href="#">Dons</a></li>
-													<li><a href="#">Dons veren</a></li>
-													<li><a href="#">Veren</a></li>
-													<li><a href="#">Schapen wol</a></li>
-													<li><a href="#">Latex</a></li>
-													<li><a href="#">Latex Ilke</a></li>
-												</ul>
-											</div>
-											<div class="col-4 ps-5 pe-4">
-												<ul>
-													<li><h3>Merk</h3></li>
-													<li><a href="#">Zydante Swiss Tech</a></li>
-													<li><a href="#">Dream Fit</a></li>
-													<li><a href="#">H2O</a></li>
-													<li><a href="#">Cool Sleeper</a></li>
-													<li><a href="#">Dr. Fit</a></li>
-												</ul>
-											</div>
-										</div>
-									</div>
-		
-									<div class="tab-pane fade show" id="v-pills-Topper" role="tabpanel" aria-labelledby="v-pills-Topper-tab">
-										<div class="row">
-											<div class="col-4 ps-5 pe-4 shoort-column">
-												<ul>
-													<li><h3>Soort</h3></li>
-													<li><a href="#">Punt kussen</a></li>
-													<li><a href="#">Box kussen</a></li>
-													<li><a href="#">Ortho kussen   </a></li>
-												</ul>
-											</div>
-											<div class="col-4 ps-5 pe-4 vulling-column">
-												<ul>
-													<li><h3>Vulling</h3></li>
-													<li><a href="#">Synthetisch</a></li>
-													<li><a href="#">Kapok</a></li>
-													<li><a href="#">Traagschuim</a></li>
-													<li><a href="#">Dons</a></li>
-													<li><a href="#">Dons veren</a></li>
-													<li><a href="#">Veren</a></li>
-													<li><a href="#">Schapen wol</a></li>
-													<li><a href="#">Latex</a></li>
-													<li><a href="#">Latex Ilke</a></li>
-												</ul>
-											</div>
-											<div class="col-4 ps-5 pe-4">
-												<ul>
-													<li><h3>Merk</h3></li>
-													<li><a href="#">Zydante Swiss Tech</a></li>
-													<li><a href="#">Dream Fit</a></li>
-													<li><a href="#">H2O</a></li>
-													<li><a href="#">Cool Sleeper</a></li>
-													<li><a href="#">Dr. Fit</a></li>
-												</ul>
-											</div>
-										</div>
-									</div>
-		
-									<div class="tab-pane fade show" id="v-pills-Huisvesting" role="tabpanel" aria-labelledby="v-pills-Huisvesting-tab">
-										<div class="row">
-											<div class="col-4 ps-5 pe-4 shoort-column">
-												<ul>
-													<li><h3>Soort</h3></li>
-													<li><a href="#">Punt kussen</a></li>
-													<li><a href="#">Box kussen</a></li>
-													<li><a href="#">Ortho kussen   </a></li>
-												</ul>
-											</div>
-											<div class="col-4 ps-5 pe-4 vulling-column">
-												<ul>
-													<li><h3>Vulling</h3></li>
-													<li><a href="#">Synthetisch</a></li>
-													<li><a href="#">Kapok</a></li>
-													<li><a href="#">Traagschuim</a></li>
-													<li><a href="#">Dons</a></li>
-													<li><a href="#">Dons veren</a></li>
-													<li><a href="#">Veren</a></li>
-													<li><a href="#">Schapen wol</a></li>
-													<li><a href="#">Latex</a></li>
-													<li><a href="#">Latex Ilke</a></li>
-												</ul>
-											</div>
-											<div class="col-4 ps-5 pe-4">
-												<ul>
-													<li><h3>Merk</h3></li>
-													<li><a href="#">Zydante Swiss Tech</a></li>
-													<li><a href="#">Dream Fit</a></li>
-													<li><a href="#">H2O</a></li>
-													<li><a href="#">Cool Sleeper</a></li>
-													<li><a href="#">Dr. Fit</a></li>
-												</ul>
-											</div>
-										</div>
-									</div>
-		
-									<div class="tab-pane fade show" id="v-pills-Bedsprei" role="tabpanel" aria-labelledby="v-pills-Bedsprei-tab">
-										<div class="row">
-											<div class="col-4 ps-5 pe-4 shoort-column">
-												<ul>
-													<li><h3>Soort</h3></li>
-													<li><a href="#">Punt kussen</a></li>
-													<li><a href="#">Box kussen</a></li>
-													<li><a href="#">Ortho kussen   </a></li>
-												</ul>
-											</div>
-											<div class="col-4 ps-5 pe-4 vulling-column">
-												<ul>
-													<li><h3>Vulling</h3></li>
-													<li><a href="#">Synthetisch</a></li>
-													<li><a href="#">Kapok</a></li>
-													<li><a href="#">Traagschuim</a></li>
-													<li><a href="#">Dons</a></li>
-													<li><a href="#">Dons veren</a></li>
-													<li><a href="#">Veren</a></li>
-													<li><a href="#">Schapen wol</a></li>
-													<li><a href="#">Latex</a></li>
-													<li><a href="#">Latex Ilke</a></li>
-												</ul>
-											</div>
-											<div class="col-4 ps-5 pe-4">
-												<ul>
-													<li><h3>Merk</h3></li>
-													<li><a href="#">Zydante Swiss Tech</a></li>
-													<li><a href="#">Dream Fit</a></li>
-													<li><a href="#">H2O</a></li>
-													<li><a href="#">Cool Sleeper</a></li>
-													<li><a href="#">Dr. Fit</a></li>
-												</ul>
-											</div>
-										</div>
-									</div>
-																
-								</div>
+					<li class="menu-item">
+						<a class="nav-item" href="overones.html">Over Ons</a>
+					</li>
+					<li class="menu-item">
+						<a class="nav-item" href="contact.html">Contact</a>
+					</li>
+				</ul>
+
+				<!-- megamenu start -->
+				<div id="megaMenu" class="accordion-collapse mega-menu-desktop collapse"
+					aria-labelledby="megaMenuButton">
+					<div class="accordion-body p-4">
+
+						<div class="row">
+							<div class="nav flex-column nav-pills col-4 col-xxl-3 px-4 parent-menu" id="v-pills-tab"
+								role="tablist" aria-orientation="vertical">
+
+								<button class="nav-link" id="v-pills-Dekbedovertrek-tab" data-bs-toggle="pill"
+									data-bs-target="#v-pills-Dekbedovertrek" type="button" role="tab"
+									aria-controls="v-pills-Dekbedovertrek" aria-selected="true">Dekbedovertrek
+								</button>
+
+								<button class="nav-link" id="v-pills-Dekbed-tab" data-bs-toggle="pill"
+									data-bs-target="#v-pills-Dekbed" type="button" role="tab"
+									aria-controls="v-pills-Dekbed" aria-selected="true">Dekbed
+								</button>
+
+								<button class="nav-link" id="v-pills-Hoeslaken-tab" data-bs-toggle="pill"
+									data-bs-target="#v-pills-Hoeslaken" type="button" role="tab"
+									aria-controls="v-pills-Hoeslaken" aria-selected="true">Hoeslaken
+								</button>
+
+								<button class="nav-link" id="v-pills-Hoofdkussen-tab" data-bs-toggle="pill"
+									data-bs-target="#v-pills-Hoofdkussen" type="button" role="tab"
+									aria-controls="v-pills-Hoofdkussen" aria-selected="true">Hoofdkussen
+								</button>
+
+								<button class="nav-link" id="v-pills-Topper-tab" data-bs-toggle="pill"
+									data-bs-target="#v-pills-Topper" type="button" role="tab"
+									aria-controls="v-pills-Topper" aria-selected="true">Topper
+								</button>
+
+								<button class="nav-link" id="v-pills-Huisvesting-tab" data-bs-toggle="pill"
+									data-bs-target="#v-pills-Huisvesting" type="button" role="tab"
+									aria-controls="v-pills-Huisvesting" aria-selected="true">Huisvesting
+								</button>
+
+								<button class="nav-link" id="v-pills-Bedsprei-tab" data-bs-toggle="pill"
+									data-bs-target="#v-pills-Bedsprei" type="button" role="tab"
+									aria-controls="v-pills-Bedsprei" aria-selected="true">Bedsprei
+								</button>
+
 							</div>
-						
-						</div>
-					</div>
-					<!-- megamenu big screen ended -->
 
-					<!-- sidenav for small screen starts -->
-					<div class="offcanvas offcanvas-start side-menu" tabindex="-1" id="sideMegamenu" aria-labelledby="sideMegamenuLabel">
-						<div class="offcanvas-header">
-							<h5 class="offcanvas-title text-white" id="sideMegamenuLabel">Producten</h5>
-							<button type="button" class="btn-close btn-close-custom text-reset" data-bs-dismiss="offcanvas" aria-label="Close">X</button>
+							<div class="tab-content col-8 col-xxl-9" id="v-pills-tabContent">
+								<div class="tab-pane fade show" id="v-pills-Dekbedovertrek" role="tabpanel"
+									aria-labelledby="v-pills-Dekbedovertrek-tab">
+									<div class="row">
+										<div class="col-4 ps-5 pe-4 shoort-column">
+											<ul>
+												<li>
+													<h3>Soort</h3>
+												</li>
+												<li><a href="#">Punt kussen</a></li>
+												<li><a href="#">Box kussen</a></li>
+												<li><a href="#">Ortho kussen </a></li>
+											</ul>
+										</div>
+										<div class="col-4 ps-5 pe-4 vulling-column">
+											<ul>
+												<li>
+													<h3>Vulling</h3>
+												</li>
+												<li><a href="#">Synthetisch</a></li>
+												<li><a href="#">Kapok</a></li>
+												<li><a href="#">Traagschuim</a></li>
+												<li><a href="#">Dons</a></li>
+												<li><a href="#">Dons veren</a></li>
+												<li><a href="#">Veren</a></li>
+												<li><a href="#">Schapen wol</a></li>
+												<li><a href="#">Latex</a></li>
+												<li><a href="#">Latex Ilke</a></li>
+											</ul>
+										</div>
+										<div class="col-4 ps-5 pe-4">
+											<ul>
+												<li>
+													<h3>Merk</h3>
+												</li>
+												<li><a href="#">Zydante Swiss Tech</a></li>
+												<li><a href="#">Dream Fit</a></li>
+												<li><a href="#">H2O</a></li>
+												<li><a href="#">Cool Sleeper</a></li>
+												<li><a href="#">Dr. Fit</a></li>
+											</ul>
+										</div>
+									</div>
+								</div>
+
+								<div class="tab-pane fade show" id="v-pills-Dekbed" role="tabpanel"
+									aria-labelledby="v-pills-Dekbed-tab">
+									<div class="row">
+										<div class="col-4 ps-5 pe-4 shoort-column">
+											<ul>
+												<li>
+													<h3>Soort</h3>
+												</li>
+												<li><a href="#">Punt kussen</a></li>
+												<li><a href="#">Box kussen</a></li>
+												<li><a href="#">Ortho kussen </a></li>
+											</ul>
+										</div>
+										<div class="col-4 ps-5 pe-4 vulling-column">
+											<ul>
+												<li>
+													<h3>Vulling</h3>
+												</li>
+												<li><a href="#">Synthetisch</a></li>
+												<li><a href="#">Kapok</a></li>
+												<li><a href="#">Traagschuim</a></li>
+												<li><a href="#">Dons</a></li>
+												<li><a href="#">Dons veren</a></li>
+												<li><a href="#">Veren</a></li>
+												<li><a href="#">Schapen wol</a></li>
+												<li><a href="#">Latex</a></li>
+												<li><a href="#">Latex Ilke</a></li>
+											</ul>
+										</div>
+										<div class="col-4 ps-5 pe-4">
+											<ul>
+												<li>
+													<h3>Merk</h3>
+												</li>
+												<li><a href="#">Zydante Swiss Tech</a></li>
+												<li><a href="#">Dream Fit</a></li>
+												<li><a href="#">H2O</a></li>
+												<li><a href="#">Cool Sleeper</a></li>
+												<li><a href="#">Dr. Fit</a></li>
+											</ul>
+										</div>
+									</div>
+								</div>
+
+								<div class="tab-pane fade show" id="v-pills-Hoeslaken" role="tabpanel"
+									aria-labelledby="v-pills-Hoeslaken-tab">
+									<div class="row">
+										<div class="col-4 ps-5 pe-4 shoort-column">
+											<ul>
+												<li>
+													<h3>Soort</h3>
+												</li>
+												<li><a href="#">Punt kussen</a></li>
+												<li><a href="#">Box kussen</a></li>
+												<li><a href="#">Ortho kussen </a></li>
+											</ul>
+										</div>
+										<div class="col-4 ps-5 pe-4 vulling-column">
+											<ul>
+												<li>
+													<h3>Vulling</h3>
+												</li>
+												<li><a href="#">Synthetisch</a></li>
+												<li><a href="#">Kapok</a></li>
+												<li><a href="#">Traagschuim</a></li>
+												<li><a href="#">Dons</a></li>
+												<li><a href="#">Dons veren</a></li>
+												<li><a href="#">Veren</a></li>
+												<li><a href="#">Schapen wol</a></li>
+												<li><a href="#">Latex</a></li>
+												<li><a href="#">Latex Ilke</a></li>
+											</ul>
+										</div>
+										<div class="col-4 ps-5 pe-4">
+											<ul>
+												<li>
+													<h3>Merk</h3>
+												</li>
+												<li><a href="#">Zydante Swiss Tech</a></li>
+												<li><a href="#">Dream Fit</a></li>
+												<li><a href="#">H2O</a></li>
+												<li><a href="#">Cool Sleeper</a></li>
+												<li><a href="#">Dr. Fit</a></li>
+											</ul>
+										</div>
+									</div>
+								</div>
+
+								<div class="tab-pane fade show active" id="v-pills-Hoofdkussen" role="tabpanel"
+									aria-labelledby="v-pills-Hoofdkussen-tab">
+									<div class="row">
+										<div class="col-4 ps-5 pe-4 shoort-column">
+											<ul>
+												<li>
+													<h3>Soort</h3>
+												</li>
+												<li><a href="#">Punt kussen</a></li>
+												<li><a href="#">Box kussen</a></li>
+												<li><a href="#">Ortho kussen </a></li>
+											</ul>
+										</div>
+										<div class="col-4 ps-5 pe-4 vulling-column">
+											<ul>
+												<li>
+													<h3>Vulling</h3>
+												</li>
+												<li><a href="#">Synthetisch</a></li>
+												<li><a href="#">Kapok</a></li>
+												<li><a href="#">Traagschuim</a></li>
+												<li><a href="#">Dons</a></li>
+												<li><a href="#">Dons veren</a></li>
+												<li><a href="#">Veren</a></li>
+												<li><a href="#">Schapen wol</a></li>
+												<li><a href="#">Latex</a></li>
+												<li><a href="#">Latex Ilke</a></li>
+											</ul>
+										</div>
+										<div class="col-4 ps-5 pe-4">
+											<ul>
+												<li>
+													<h3>Merk</h3>
+												</li>
+												<li><a href="#">Zydante Swiss Tech</a></li>
+												<li><a href="#">Dream Fit</a></li>
+												<li><a href="#">H2O</a></li>
+												<li><a href="#">Cool Sleeper</a></li>
+												<li><a href="#">Dr. Fit</a></li>
+											</ul>
+										</div>
+									</div>
+								</div>
+
+								<div class="tab-pane fade show" id="v-pills-Topper" role="tabpanel"
+									aria-labelledby="v-pills-Topper-tab">
+									<div class="row">
+										<div class="col-4 ps-5 pe-4 shoort-column">
+											<ul>
+												<li>
+													<h3>Soort</h3>
+												</li>
+												<li><a href="#">Punt kussen</a></li>
+												<li><a href="#">Box kussen</a></li>
+												<li><a href="#">Ortho kussen </a></li>
+											</ul>
+										</div>
+										<div class="col-4 ps-5 pe-4 vulling-column">
+											<ul>
+												<li>
+													<h3>Vulling</h3>
+												</li>
+												<li><a href="#">Synthetisch</a></li>
+												<li><a href="#">Kapok</a></li>
+												<li><a href="#">Traagschuim</a></li>
+												<li><a href="#">Dons</a></li>
+												<li><a href="#">Dons veren</a></li>
+												<li><a href="#">Veren</a></li>
+												<li><a href="#">Schapen wol</a></li>
+												<li><a href="#">Latex</a></li>
+												<li><a href="#">Latex Ilke</a></li>
+											</ul>
+										</div>
+										<div class="col-4 ps-5 pe-4">
+											<ul>
+												<li>
+													<h3>Merk</h3>
+												</li>
+												<li><a href="#">Zydante Swiss Tech</a></li>
+												<li><a href="#">Dream Fit</a></li>
+												<li><a href="#">H2O</a></li>
+												<li><a href="#">Cool Sleeper</a></li>
+												<li><a href="#">Dr. Fit</a></li>
+											</ul>
+										</div>
+									</div>
+								</div>
+
+								<div class="tab-pane fade show" id="v-pills-Huisvesting" role="tabpanel"
+									aria-labelledby="v-pills-Huisvesting-tab">
+									<div class="row">
+										<div class="col-4 ps-5 pe-4 shoort-column">
+											<ul>
+												<li>
+													<h3>Soort</h3>
+												</li>
+												<li><a href="#">Punt kussen</a></li>
+												<li><a href="#">Box kussen</a></li>
+												<li><a href="#">Ortho kussen </a></li>
+											</ul>
+										</div>
+										<div class="col-4 ps-5 pe-4 vulling-column">
+											<ul>
+												<li>
+													<h3>Vulling</h3>
+												</li>
+												<li><a href="#">Synthetisch</a></li>
+												<li><a href="#">Kapok</a></li>
+												<li><a href="#">Traagschuim</a></li>
+												<li><a href="#">Dons</a></li>
+												<li><a href="#">Dons veren</a></li>
+												<li><a href="#">Veren</a></li>
+												<li><a href="#">Schapen wol</a></li>
+												<li><a href="#">Latex</a></li>
+												<li><a href="#">Latex Ilke</a></li>
+											</ul>
+										</div>
+										<div class="col-4 ps-5 pe-4">
+											<ul>
+												<li>
+													<h3>Merk</h3>
+												</li>
+												<li><a href="#">Zydante Swiss Tech</a></li>
+												<li><a href="#">Dream Fit</a></li>
+												<li><a href="#">H2O</a></li>
+												<li><a href="#">Cool Sleeper</a></li>
+												<li><a href="#">Dr. Fit</a></li>
+											</ul>
+										</div>
+									</div>
+								</div>
+
+								<div class="tab-pane fade show" id="v-pills-Bedsprei" role="tabpanel"
+									aria-labelledby="v-pills-Bedsprei-tab">
+									<div class="row">
+										<div class="col-4 ps-5 pe-4 shoort-column">
+											<ul>
+												<li>
+													<h3>Soort</h3>
+												</li>
+												<li><a href="#">Punt kussen</a></li>
+												<li><a href="#">Box kussen</a></li>
+												<li><a href="#">Ortho kussen </a></li>
+											</ul>
+										</div>
+										<div class="col-4 ps-5 pe-4 vulling-column">
+											<ul>
+												<li>
+													<h3>Vulling</h3>
+												</li>
+												<li><a href="#">Synthetisch</a></li>
+												<li><a href="#">Kapok</a></li>
+												<li><a href="#">Traagschuim</a></li>
+												<li><a href="#">Dons</a></li>
+												<li><a href="#">Dons veren</a></li>
+												<li><a href="#">Veren</a></li>
+												<li><a href="#">Schapen wol</a></li>
+												<li><a href="#">Latex</a></li>
+												<li><a href="#">Latex Ilke</a></li>
+											</ul>
+										</div>
+										<div class="col-4 ps-5 pe-4">
+											<ul>
+												<li>
+													<h3>Merk</h3>
+												</li>
+												<li><a href="#">Zydante Swiss Tech</a></li>
+												<li><a href="#">Dream Fit</a></li>
+												<li><a href="#">H2O</a></li>
+												<li><a href="#">Cool Sleeper</a></li>
+												<li><a href="#">Dr. Fit</a></li>
+											</ul>
+										</div>
+									</div>
+								</div>
+
+							</div>
 						</div>
-						<div class="offcanvas-body">
-							<div class="accordion accordion-flush" id="accordionFlushNav">
-								<div class="accordion-item">
-								  <h2 class="accordion-header" id="flush-headingOne">
-									<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+
+					</div>
+				</div>
+				<!-- megamenu big screen ended -->
+
+				<!-- sidenav for small screen starts -->
+				<div class="offcanvas offcanvas-start side-menu" tabindex="-1" id="sideMegamenu"
+					aria-labelledby="sideMegamenuLabel">
+					<div class="offcanvas-header">
+						<h5 class="offcanvas-title text-white" id="sideMegamenuLabel">Producten</h5>
+						<button type="button" class="btn-close btn-close-custom text-reset" data-bs-dismiss="offcanvas"
+							aria-label="Close">X</button>
+					</div>
+					<div class="offcanvas-body">
+						<div class="accordion accordion-flush" id="accordionFlushNav">
+							<div class="accordion-item">
+								<h2 class="accordion-header" id="flush-headingOne">
+									<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+										data-bs-target="#flush-collapseOne" aria-expanded="false"
+										aria-controls="flush-collapseOne">
 										Dekbedovertrek
 									</button>
-								  </h2>
-								  <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushNav">
+								</h2>
+								<div id="flush-collapseOne" class="accordion-collapse collapse"
+									aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushNav">
 									<div class="accordion-body">
-																					
+
 										<!--Dekbedovertrek sub Accordion start-->
 										<div class="accordion accordion-flush" id="Dekbedovertrek-sub-accordion">
 											<div class="accordion-item">
 												<h2 class="accordion-header" id="Dekbedovertrek-sub-flush-headingOne">
-												<button class="accordion-button sub-title collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#Dekbedovertrek-soort-flush-collapseOne" aria-expanded="false" aria-controls="Dekbedovertrek-soort-flush-collapseOne">
-													Soort
-												</button>
+													<button class="accordion-button sub-title collapsed" type="button"
+														data-bs-toggle="collapse"
+														data-bs-target="#Dekbedovertrek-soort-flush-collapseOne"
+														aria-expanded="false"
+														aria-controls="Dekbedovertrek-soort-flush-collapseOne">
+														Soort
+													</button>
 												</h2>
-												<div id="Dekbedovertrek-soort-flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="Dekbedovertrek-sub-flush-headingOne" data-bs-parent="#Dekbedovertrek-sub-accordion">
+												<div id="Dekbedovertrek-soort-flush-collapseOne"
+													class="accordion-collapse collapse"
+													aria-labelledby="Dekbedovertrek-sub-flush-headingOne"
+													data-bs-parent="#Dekbedovertrek-sub-accordion">
 													<ul>
 														<li><a href="#">Punt kussen</a></li>
 														<li><a href="#">Box kussen</a></li>
-														<li><a href="#">Ortho kussen   </a></li>
+														<li><a href="#">Ortho kussen </a></li>
 													</ul>
 												</div>
 											</div>
 											<div class="accordion-item">
 												<h2 class="accordion-header" id="Dekbedovertrek-sub-flush-headingTwo">
-												<button class="accordion-button sub-title collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#Dekbedovertrek-vulling-flush-collapseTwo" aria-expanded="false" aria-controls="Dekbedovertrek-vulling-flush-collapseTwo">
-													Vulling
-												</button>
+													<button class="accordion-button sub-title collapsed" type="button"
+														data-bs-toggle="collapse"
+														data-bs-target="#Dekbedovertrek-vulling-flush-collapseTwo"
+														aria-expanded="false"
+														aria-controls="Dekbedovertrek-vulling-flush-collapseTwo">
+														Vulling
+													</button>
 												</h2>
-												<div id="Dekbedovertrek-vulling-flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="Dekbedovertrek-sub-flush-headingTwo" data-bs-parent="#Dekbedovertrek-sub-accordion">
-												<ul>
-													<li><a href="#">Synthetisch</a></li>
-													<li><a href="#">Kapok</a></li>
-													<li><a href="#">Traagschuim</a></li>
-													<li><a href="#">Dons</a></li>
-													<li><a href="#">Dons veren</a></li>
-													<li><a href="#">Veren</a></li>
-													<li><a href="#">Schapen wol</a></li>
-													<li><a href="#">Latex</a></li>
-													<li><a href="#">Latex Ilke</a></li>
-												</ul>
+												<div id="Dekbedovertrek-vulling-flush-collapseTwo"
+													class="accordion-collapse collapse"
+													aria-labelledby="Dekbedovertrek-sub-flush-headingTwo"
+													data-bs-parent="#Dekbedovertrek-sub-accordion">
+													<ul>
+														<li><a href="#">Synthetisch</a></li>
+														<li><a href="#">Kapok</a></li>
+														<li><a href="#">Traagschuim</a></li>
+														<li><a href="#">Dons</a></li>
+														<li><a href="#">Dons veren</a></li>
+														<li><a href="#">Veren</a></li>
+														<li><a href="#">Schapen wol</a></li>
+														<li><a href="#">Latex</a></li>
+														<li><a href="#">Latex Ilke</a></li>
+													</ul>
 												</div>
 											</div>
 											<div class="accordion-item">
 												<h2 class="accordion-header" id="Dekbedovertrek-sub-flush-headingThree">
-												<button class="accordion-button sub-title collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#Dekbedovertrek-merk-flush-collapseThree" aria-expanded="false" aria-controls="Dekbedovertrek-merk-flush-collapseThree">
-													Merk
-												</button>
+													<button class="accordion-button sub-title collapsed" type="button"
+														data-bs-toggle="collapse"
+														data-bs-target="#Dekbedovertrek-merk-flush-collapseThree"
+														aria-expanded="false"
+														aria-controls="Dekbedovertrek-merk-flush-collapseThree">
+														Merk
+													</button>
 												</h2>
-												<div id="Dekbedovertrek-merk-flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="Dekbedovertrek-sub-flush-headingThree" data-bs-parent="#Dekbedovertrek-sub-accordion">
-												<ul>
-													<li><a href="#">Zydante Swiss Tech</a></li>
-													<li><a href="#">Dream Fit</a></li>
-													<li><a href="#">H2O</a></li>
-													<li><a href="#">Cool Sleeper</a></li>
-													<li><a href="#">Dr. Fit</a></li>
-												</ul>
+												<div id="Dekbedovertrek-merk-flush-collapseThree"
+													class="accordion-collapse collapse"
+													aria-labelledby="Dekbedovertrek-sub-flush-headingThree"
+													data-bs-parent="#Dekbedovertrek-sub-accordion">
+													<ul>
+														<li><a href="#">Zydante Swiss Tech</a></li>
+														<li><a href="#">Dream Fit</a></li>
+														<li><a href="#">H2O</a></li>
+														<li><a href="#">Cool Sleeper</a></li>
+														<li><a href="#">Dr. Fit</a></li>
+													</ul>
 												</div>
 											</div>
 										</div>
 										<!--Dekbedovertrek sub Accordion end-->
 
 									</div>
-								  </div>
 								</div>
-								<div class="accordion-item">
-								  <h2 class="accordion-header" id="flush-headingTwo">
-									<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+							</div>
+							<div class="accordion-item">
+								<h2 class="accordion-header" id="flush-headingTwo">
+									<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+										data-bs-target="#flush-collapseTwo" aria-expanded="false"
+										aria-controls="flush-collapseTwo">
 										Dekbed
 									</button>
-								  </h2>
-								  <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushNav">
+								</h2>
+								<div id="flush-collapseTwo" class="accordion-collapse collapse"
+									aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushNav">
 									<div class="accordion-body">
 
 										<!--Dekbed sub Accordion start-->
 										<div class="accordion accordion-flush" id="Dekbed-sub-accordion">
 											<div class="accordion-item">
 												<h2 class="accordion-header" id="Dekbed-sub-flush-headingOne">
-												<button class="accordion-button sub-title collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#Dekbed-soort-flush-collapseOne" aria-expanded="false" aria-controls="Dekbed-soort-flush-collapseOne">
-													Soort
-												</button>
+													<button class="accordion-button sub-title collapsed" type="button"
+														data-bs-toggle="collapse"
+														data-bs-target="#Dekbed-soort-flush-collapseOne"
+														aria-expanded="false"
+														aria-controls="Dekbed-soort-flush-collapseOne">
+														Soort
+													</button>
 												</h2>
-												<div id="Dekbed-soort-flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="Dekbed-sub-flush-headingOne" data-bs-parent="#Dekbed-sub-accordion">
-												<ul>
-													<li><a href="#">Punt kussen</a></li>
-													<li><a href="#">Box kussen</a></li>
-													<li><a href="#">Ortho kussen   </a></li>
-												</ul>
+												<div id="Dekbed-soort-flush-collapseOne"
+													class="accordion-collapse collapse"
+													aria-labelledby="Dekbed-sub-flush-headingOne"
+													data-bs-parent="#Dekbed-sub-accordion">
+													<ul>
+														<li><a href="#">Punt kussen</a></li>
+														<li><a href="#">Box kussen</a></li>
+														<li><a href="#">Ortho kussen </a></li>
+													</ul>
 												</div>
 											</div>
 											<div class="accordion-item">
 												<h2 class="accordion-header" id="Dekbed-sub-flush-headingTwo">
-												<button class="accordion-button sub-title collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#Dekbed-vulling-flush-collapseTwo" aria-expanded="false" aria-controls="Dekbed-vulling-flush-collapseTwo">
-													Vulling
-												</button>
+													<button class="accordion-button sub-title collapsed" type="button"
+														data-bs-toggle="collapse"
+														data-bs-target="#Dekbed-vulling-flush-collapseTwo"
+														aria-expanded="false"
+														aria-controls="Dekbed-vulling-flush-collapseTwo">
+														Vulling
+													</button>
 												</h2>
-												<div id="Dekbed-vulling-flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="Dekbed-sub-flush-headingTwo" data-bs-parent="#Dekbed-sub-accordion">
-												<ul>
-													<li><a href="#">Synthetisch</a></li>
-													<li><a href="#">Kapok</a></li>
-													<li><a href="#">Traagschuim</a></li>
-													<li><a href="#">Dons</a></li>
-													<li><a href="#">Dons veren</a></li>
-													<li><a href="#">Veren</a></li>
-													<li><a href="#">Schapen wol</a></li>
-													<li><a href="#">Latex</a></li>
-													<li><a href="#">Latex Ilke</a></li>
-												</ul>
+												<div id="Dekbed-vulling-flush-collapseTwo"
+													class="accordion-collapse collapse"
+													aria-labelledby="Dekbed-sub-flush-headingTwo"
+													data-bs-parent="#Dekbed-sub-accordion">
+													<ul>
+														<li><a href="#">Synthetisch</a></li>
+														<li><a href="#">Kapok</a></li>
+														<li><a href="#">Traagschuim</a></li>
+														<li><a href="#">Dons</a></li>
+														<li><a href="#">Dons veren</a></li>
+														<li><a href="#">Veren</a></li>
+														<li><a href="#">Schapen wol</a></li>
+														<li><a href="#">Latex</a></li>
+														<li><a href="#">Latex Ilke</a></li>
+													</ul>
 												</div>
 											</div>
 											<div class="accordion-item">
 												<h2 class="accordion-header" id="Dekbed-sub-flush-headingThree">
-												<button class="accordion-button sub-title collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#Dekbed-merk-flush-collapseThree" aria-expanded="false" aria-controls="Dekbed-merk-flush-collapseThree">
-													Merk
-												</button>
+													<button class="accordion-button sub-title collapsed" type="button"
+														data-bs-toggle="collapse"
+														data-bs-target="#Dekbed-merk-flush-collapseThree"
+														aria-expanded="false"
+														aria-controls="Dekbed-merk-flush-collapseThree">
+														Merk
+													</button>
 												</h2>
-												<div id="Dekbed-merk-flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="Dekbed-sub-flush-headingThree" data-bs-parent="#Dekbed-sub-accordion">
-												<ul>
-													<li><a href="#">Zydante Swiss Tech</a></li>
-													<li><a href="#">Dream Fit</a></li>
-													<li><a href="#">H2O</a></li>
-													<li><a href="#">Cool Sleeper</a></li>
-													<li><a href="#">Dr. Fit</a></li>
-												</ul>
+												<div id="Dekbed-merk-flush-collapseThree"
+													class="accordion-collapse collapse"
+													aria-labelledby="Dekbed-sub-flush-headingThree"
+													data-bs-parent="#Dekbed-sub-accordion">
+													<ul>
+														<li><a href="#">Zydante Swiss Tech</a></li>
+														<li><a href="#">Dream Fit</a></li>
+														<li><a href="#">H2O</a></li>
+														<li><a href="#">Cool Sleeper</a></li>
+														<li><a href="#">Dr. Fit</a></li>
+													</ul>
 												</div>
 											</div>
 										</div>
 										<!--Dekbed sub Accordion end-->
 
 									</div>
-								  </div>
 								</div>
-								<div class="accordion-item">
-								  <h2 class="accordion-header" id="flush-headingThree">
-									<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+							</div>
+							<div class="accordion-item">
+								<h2 class="accordion-header" id="flush-headingThree">
+									<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+										data-bs-target="#flush-collapseThree" aria-expanded="false"
+										aria-controls="flush-collapseThree">
 										Hoeslaken
 									</button>
-								  </h2>
-								  <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushNav">
+								</h2>
+								<div id="flush-collapseThree" class="accordion-collapse collapse"
+									aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushNav">
 									<div class="accordion-body">
 										<!--Hoeslaken sub Accordion start-->
 										<div class="accordion accordion-flush" id="Hoeslaken-sub-accordion">
 											<div class="accordion-item">
 												<h2 class="accordion-header" id="Hoeslaken-sub-flush-headingOne">
-												<button class="accordion-button sub-title collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#Hoeslaken-soort-flush-collapseOne" aria-expanded="false" aria-controls="Hoeslaken-soort-flush-collapseOne">
-													Soort
-												</button>
+													<button class="accordion-button sub-title collapsed" type="button"
+														data-bs-toggle="collapse"
+														data-bs-target="#Hoeslaken-soort-flush-collapseOne"
+														aria-expanded="false"
+														aria-controls="Hoeslaken-soort-flush-collapseOne">
+														Soort
+													</button>
 												</h2>
-												<div id="Hoeslaken-soort-flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="Hoeslaken-sub-flush-headingOne" data-bs-parent="#Hoeslaken-sub-accordion">
-												<ul>
-													<li><a href="#">Punt kussen</a></li>
-													<li><a href="#">Box kussen</a></li>
-													<li><a href="#">Ortho kussen   </a></li>
-												</ul>
+												<div id="Hoeslaken-soort-flush-collapseOne"
+													class="accordion-collapse collapse"
+													aria-labelledby="Hoeslaken-sub-flush-headingOne"
+													data-bs-parent="#Hoeslaken-sub-accordion">
+													<ul>
+														<li><a href="#">Punt kussen</a></li>
+														<li><a href="#">Box kussen</a></li>
+														<li><a href="#">Ortho kussen </a></li>
+													</ul>
 												</div>
 											</div>
 											<div class="accordion-item">
 												<h2 class="accordion-header" id="Hoeslaken-sub-flush-headingTwo">
-												<button class="accordion-button sub-title collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#Hoeslaken-vulling-flush-collapseTwo" aria-expanded="false" aria-controls="Hoeslaken-vulling-flush-collapseTwo">
-													Vulling
-												</button>
+													<button class="accordion-button sub-title collapsed" type="button"
+														data-bs-toggle="collapse"
+														data-bs-target="#Hoeslaken-vulling-flush-collapseTwo"
+														aria-expanded="false"
+														aria-controls="Hoeslaken-vulling-flush-collapseTwo">
+														Vulling
+													</button>
 												</h2>
-												<div id="Hoeslaken-vulling-flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="Hoeslaken-sub-flush-headingTwo" data-bs-parent="#Hoeslaken-sub-accordion">
-												<ul>
-													<li><a href="#">Synthetisch</a></li>
-													<li><a href="#">Kapok</a></li>
-													<li><a href="#">Traagschuim</a></li>
-													<li><a href="#">Dons</a></li>
-													<li><a href="#">Dons veren</a></li>
-													<li><a href="#">Veren</a></li>
-													<li><a href="#">Schapen wol</a></li>
-													<li><a href="#">Latex</a></li>
-													<li><a href="#">Latex Ilke</a></li>
-												</ul>
+												<div id="Hoeslaken-vulling-flush-collapseTwo"
+													class="accordion-collapse collapse"
+													aria-labelledby="Hoeslaken-sub-flush-headingTwo"
+													data-bs-parent="#Hoeslaken-sub-accordion">
+													<ul>
+														<li><a href="#">Synthetisch</a></li>
+														<li><a href="#">Kapok</a></li>
+														<li><a href="#">Traagschuim</a></li>
+														<li><a href="#">Dons</a></li>
+														<li><a href="#">Dons veren</a></li>
+														<li><a href="#">Veren</a></li>
+														<li><a href="#">Schapen wol</a></li>
+														<li><a href="#">Latex</a></li>
+														<li><a href="#">Latex Ilke</a></li>
+													</ul>
 												</div>
 											</div>
 											<div class="accordion-item">
 												<h2 class="accordion-header" id="Hoeslaken-sub-flush-headingThree">
-												<button class="accordion-button sub-title collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#Hoeslaken-merk-flush-collapseThree" aria-expanded="false" aria-controls="Hoeslaken-merk-flush-collapseThree">
-													Merk
-												</button>
+													<button class="accordion-button sub-title collapsed" type="button"
+														data-bs-toggle="collapse"
+														data-bs-target="#Hoeslaken-merk-flush-collapseThree"
+														aria-expanded="false"
+														aria-controls="Hoeslaken-merk-flush-collapseThree">
+														Merk
+													</button>
 												</h2>
-												<div id="Hoeslaken-merk-flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="Hoeslaken-sub-flush-headingThree" data-bs-parent="#Hoeslaken-sub-accordion">
-												<ul>
-													<li><a href="#">Zydante Swiss Tech</a></li>
-													<li><a href="#">Dream Fit</a></li>
-													<li><a href="#">H2O</a></li>
-													<li><a href="#">Cool Sleeper</a></li>
-													<li><a href="#">Dr. Fit</a></li>
-												</ul>
+												<div id="Hoeslaken-merk-flush-collapseThree"
+													class="accordion-collapse collapse"
+													aria-labelledby="Hoeslaken-sub-flush-headingThree"
+													data-bs-parent="#Hoeslaken-sub-accordion">
+													<ul>
+														<li><a href="#">Zydante Swiss Tech</a></li>
+														<li><a href="#">Dream Fit</a></li>
+														<li><a href="#">H2O</a></li>
+														<li><a href="#">Cool Sleeper</a></li>
+														<li><a href="#">Dr. Fit</a></li>
+													</ul>
 												</div>
 											</div>
 										</div>
 										<!--Hoeslaken sub Accordion end-->
 									</div>
 								</div>
-								</div>
-								<div class="accordion-item">
-								  <h2 class="accordion-header" id="flush-headingFour">
-									<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFour" aria-expanded="false" aria-controls="flush-collapseThree">
+							</div>
+							<div class="accordion-item">
+								<h2 class="accordion-header" id="flush-headingFour">
+									<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+										data-bs-target="#flush-collapseFour" aria-expanded="false"
+										aria-controls="flush-collapseThree">
 										Hoofdkussen
 									</button>
-								  </h2>
-								  <div id="flush-collapseFour" class="accordion-collapse collapse" aria-labelledby="flush-headingFour" data-bs-parent="#accordionFlushNav">
+								</h2>
+								<div id="flush-collapseFour" class="accordion-collapse collapse"
+									aria-labelledby="flush-headingFour" data-bs-parent="#accordionFlushNav">
 									<div class="accordion-body">
-											 <!--Hoofdkussen sub Accordion start-->
-											<div class="accordion accordion-flush" id="Hoofdkussen-sub-accordion">
-												<div class="accordion-item">
-													<h2 class="accordion-header" id="Hoofdkussen-sub-flush-headingOne">
-													<button class="accordion-button sub-title collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#Hoofdkussen-soort-flush-collapseOne" aria-expanded="false" aria-controls="Hoofdkussen-soort-flush-collapseOne">
+										<!--Hoofdkussen sub Accordion start-->
+										<div class="accordion accordion-flush" id="Hoofdkussen-sub-accordion">
+											<div class="accordion-item">
+												<h2 class="accordion-header" id="Hoofdkussen-sub-flush-headingOne">
+													<button class="accordion-button sub-title collapsed" type="button"
+														data-bs-toggle="collapse"
+														data-bs-target="#Hoofdkussen-soort-flush-collapseOne"
+														aria-expanded="false"
+														aria-controls="Hoofdkussen-soort-flush-collapseOne">
 														Soort
 													</button>
-													</h2>
-													<div id="Hoofdkussen-soort-flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="Hoofdkussen-sub-flush-headingOne" data-bs-parent="#Hoofdkussen-sub-accordion">
+												</h2>
+												<div id="Hoofdkussen-soort-flush-collapseOne"
+													class="accordion-collapse collapse"
+													aria-labelledby="Hoofdkussen-sub-flush-headingOne"
+													data-bs-parent="#Hoofdkussen-sub-accordion">
 													<ul>
 														<li><a href="#">Punt kussen</a></li>
 														<li><a href="#">Box kussen</a></li>
-														<li><a href="#">Ortho kussen   </a></li>
+														<li><a href="#">Ortho kussen </a></li>
 													</ul>
-													</div>
 												</div>
-												<div class="accordion-item">
-													<h2 class="accordion-header" id="Hoofdkussen-sub-flush-headingTwo">
-													<button class="accordion-button sub-title collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#Hoofdkussen-vulling-flush-collapseTwo" aria-expanded="false" aria-controls="Hoofdkussen-vulling-flush-collapseTwo">
+											</div>
+											<div class="accordion-item">
+												<h2 class="accordion-header" id="Hoofdkussen-sub-flush-headingTwo">
+													<button class="accordion-button sub-title collapsed" type="button"
+														data-bs-toggle="collapse"
+														data-bs-target="#Hoofdkussen-vulling-flush-collapseTwo"
+														aria-expanded="false"
+														aria-controls="Hoofdkussen-vulling-flush-collapseTwo">
 														Vulling
 													</button>
-													</h2>
-													<div id="Hoofdkussen-vulling-flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="Hoofdkussen-sub-flush-headingTwo" data-bs-parent="#Hoofdkussen-sub-accordion">
+												</h2>
+												<div id="Hoofdkussen-vulling-flush-collapseTwo"
+													class="accordion-collapse collapse"
+													aria-labelledby="Hoofdkussen-sub-flush-headingTwo"
+													data-bs-parent="#Hoofdkussen-sub-accordion">
 													<ul>
 														<li><a href="#">Synthetisch</a></li>
 														<li><a href="#">Kapok</a></li>
@@ -675,15 +797,22 @@
 														<li><a href="#">Latex</a></li>
 														<li><a href="#">Latex Ilke</a></li>
 													</ul>
-													</div>
 												</div>
-												<div class="accordion-item">
-													<h2 class="accordion-header" id="Hoofdkussen-sub-flush-headingThree">
-													<button class="accordion-button sub-title collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#Hoofdkussen-merk-flush-collapseThree" aria-expanded="false" aria-controls="Hoofdkussen-merk-flush-collapseThree">
+											</div>
+											<div class="accordion-item">
+												<h2 class="accordion-header" id="Hoofdkussen-sub-flush-headingThree">
+													<button class="accordion-button sub-title collapsed" type="button"
+														data-bs-toggle="collapse"
+														data-bs-target="#Hoofdkussen-merk-flush-collapseThree"
+														aria-expanded="false"
+														aria-controls="Hoofdkussen-merk-flush-collapseThree">
 														Merk
 													</button>
-													</h2>
-													<div id="Hoofdkussen-merk-flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="Hoofdkussen-sub-flush-headingThree" data-bs-parent="#Hoofdkussen-sub-accordion">
+												</h2>
+												<div id="Hoofdkussen-merk-flush-collapseThree"
+													class="accordion-collapse collapse"
+													aria-labelledby="Hoofdkussen-sub-flush-headingThree"
+													data-bs-parent="#Hoofdkussen-sub-accordion">
 													<ul>
 														<li><a href="#">Zydante Swiss Tech</a></li>
 														<li><a href="#">Dream Fit</a></li>
@@ -691,44 +820,61 @@
 														<li><a href="#">Cool Sleeper</a></li>
 														<li><a href="#">Dr. Fit</a></li>
 													</ul>
-													</div>
 												</div>
 											</div>
-											<!--Hoofdkussen sub Accordion end-->
+										</div>
+										<!--Hoofdkussen sub Accordion end-->
 									</div>
-								  </div>										
 								</div>
-								<div class="accordion-item">
-								  <h2 class="accordion-header" id="flush-headingFive">
-									<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFive" aria-expanded="false" aria-controls="flush-collapseThree">
+							</div>
+							<div class="accordion-item">
+								<h2 class="accordion-header" id="flush-headingFive">
+									<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+										data-bs-target="#flush-collapseFive" aria-expanded="false"
+										aria-controls="flush-collapseThree">
 										Topper
 									</button>
-								  </h2>
-								  <div id="flush-collapseFive" class="accordion-collapse collapse" aria-labelledby="flush-headingFive" data-bs-parent="#accordionFlushNav">
+								</h2>
+								<div id="flush-collapseFive" class="accordion-collapse collapse"
+									aria-labelledby="flush-headingFive" data-bs-parent="#accordionFlushNav">
 									<div class="accordion-body">
-											 <!--Topper sub Accordion start-->
-											<div class="accordion accordion-flush" id="Topper-sub-accordion">
-												<div class="accordion-item">
-													<h2 class="accordion-header" id="Topper-sub-flush-headingOne">
-													<button class="accordion-button sub-title collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#Topper-soort-flush-collapseOne" aria-expanded="false" aria-controls="Topper-soort-flush-collapseOne">
+										<!--Topper sub Accordion start-->
+										<div class="accordion accordion-flush" id="Topper-sub-accordion">
+											<div class="accordion-item">
+												<h2 class="accordion-header" id="Topper-sub-flush-headingOne">
+													<button class="accordion-button sub-title collapsed" type="button"
+														data-bs-toggle="collapse"
+														data-bs-target="#Topper-soort-flush-collapseOne"
+														aria-expanded="false"
+														aria-controls="Topper-soort-flush-collapseOne">
 														Soort
 													</button>
-													</h2>
-													<div id="Topper-soort-flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="Topper-sub-flush-headingOne" data-bs-parent="#Topper-sub-accordion">
+												</h2>
+												<div id="Topper-soort-flush-collapseOne"
+													class="accordion-collapse collapse"
+													aria-labelledby="Topper-sub-flush-headingOne"
+													data-bs-parent="#Topper-sub-accordion">
 													<ul>
 														<li><a href="#">Punt kussen</a></li>
 														<li><a href="#">Box kussen</a></li>
-														<li><a href="#">Ortho kussen   </a></li>
+														<li><a href="#">Ortho kussen </a></li>
 													</ul>
-													</div>
 												</div>
-												<div class="accordion-item">
-													<h2 class="accordion-header" id="Topper-sub-flush-headingTwo">
-													<button class="accordion-button sub-title collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#Topper-vulling-flush-collapseTwo" aria-expanded="false" aria-controls="Topper-vulling-flush-collapseTwo">
+											</div>
+											<div class="accordion-item">
+												<h2 class="accordion-header" id="Topper-sub-flush-headingTwo">
+													<button class="accordion-button sub-title collapsed" type="button"
+														data-bs-toggle="collapse"
+														data-bs-target="#Topper-vulling-flush-collapseTwo"
+														aria-expanded="false"
+														aria-controls="Topper-vulling-flush-collapseTwo">
 														Vulling
 													</button>
-													</h2>
-													<div id="Topper-vulling-flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="Topper-sub-flush-headingTwo" data-bs-parent="#Topper-sub-accordion">
+												</h2>
+												<div id="Topper-vulling-flush-collapseTwo"
+													class="accordion-collapse collapse"
+													aria-labelledby="Topper-sub-flush-headingTwo"
+													data-bs-parent="#Topper-sub-accordion">
 													<ul>
 														<li><a href="#">Synthetisch</a></li>
 														<li><a href="#">Kapok</a></li>
@@ -740,15 +886,22 @@
 														<li><a href="#">Latex</a></li>
 														<li><a href="#">Latex Ilke</a></li>
 													</ul>
-													</div>
 												</div>
-												<div class="accordion-item">
-													<h2 class="accordion-header" id="Topper-sub-flush-headingThree">
-													<button class="accordion-button sub-title collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#Topper-merk-flush-collapseThree" aria-expanded="false" aria-controls="Topper-merk-flush-collapseThree">
+											</div>
+											<div class="accordion-item">
+												<h2 class="accordion-header" id="Topper-sub-flush-headingThree">
+													<button class="accordion-button sub-title collapsed" type="button"
+														data-bs-toggle="collapse"
+														data-bs-target="#Topper-merk-flush-collapseThree"
+														aria-expanded="false"
+														aria-controls="Topper-merk-flush-collapseThree">
 														Merk
 													</button>
-													</h2>
-													<div id="Topper-merk-flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="Topper-sub-flush-headingThree" data-bs-parent="#Topper-sub-accordion">
+												</h2>
+												<div id="Topper-merk-flush-collapseThree"
+													class="accordion-collapse collapse"
+													aria-labelledby="Topper-sub-flush-headingThree"
+													data-bs-parent="#Topper-sub-accordion">
 													<ul>
 														<li><a href="#">Zydante Swiss Tech</a></li>
 														<li><a href="#">Dream Fit</a></li>
@@ -756,44 +909,61 @@
 														<li><a href="#">Cool Sleeper</a></li>
 														<li><a href="#">Dr. Fit</a></li>
 													</ul>
-													</div>
 												</div>
 											</div>
-											<!--Topper sub Accordion end-->
+										</div>
+										<!--Topper sub Accordion end-->
 									</div>
-								  </div>
 								</div>
-								<div class="accordion-item">
-								  <h2 class="accordion-header" id="flush-headingSix">
-									<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseSix" aria-expanded="false" aria-controls="flush-collapseThree">
+							</div>
+							<div class="accordion-item">
+								<h2 class="accordion-header" id="flush-headingSix">
+									<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+										data-bs-target="#flush-collapseSix" aria-expanded="false"
+										aria-controls="flush-collapseThree">
 										Huisvesting
 									</button>
-								  </h2>
-								  <div id="flush-collapseSix" class="accordion-collapse collapse" aria-labelledby="flush-headingSix" data-bs-parent="#accordionFlushNav">
+								</h2>
+								<div id="flush-collapseSix" class="accordion-collapse collapse"
+									aria-labelledby="flush-headingSix" data-bs-parent="#accordionFlushNav">
 									<div class="accordion-body">
-											 <!--Huisvesting sub Accordion start-->
-											<div class="accordion accordion-flush" id="Huisvesting-sub-accordion">
-												<div class="accordion-item">
-													<h2 class="accordion-header" id="Huisvesting-sub-flush-headingOne">
-													<button class="accordion-button sub-title collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#Huisvesting-soort-flush-collapseOne" aria-expanded="false" aria-controls="Huisvesting-soort-flush-collapseOne">
+										<!--Huisvesting sub Accordion start-->
+										<div class="accordion accordion-flush" id="Huisvesting-sub-accordion">
+											<div class="accordion-item">
+												<h2 class="accordion-header" id="Huisvesting-sub-flush-headingOne">
+													<button class="accordion-button sub-title collapsed" type="button"
+														data-bs-toggle="collapse"
+														data-bs-target="#Huisvesting-soort-flush-collapseOne"
+														aria-expanded="false"
+														aria-controls="Huisvesting-soort-flush-collapseOne">
 														Soort
 													</button>
-													</h2>
-													<div id="Huisvesting-soort-flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="Huisvesting-sub-flush-headingOne" data-bs-parent="#Huisvesting-sub-accordion">
+												</h2>
+												<div id="Huisvesting-soort-flush-collapseOne"
+													class="accordion-collapse collapse"
+													aria-labelledby="Huisvesting-sub-flush-headingOne"
+													data-bs-parent="#Huisvesting-sub-accordion">
 													<ul>
 														<li><a href="#">Punt kussen</a></li>
 														<li><a href="#">Box kussen</a></li>
-														<li><a href="#">Ortho kussen   </a></li>
+														<li><a href="#">Ortho kussen </a></li>
 													</ul>
-													</div>
 												</div>
-												<div class="accordion-item">
-													<h2 class="accordion-header" id="Huisvesting-sub-flush-headingTwo">
-													<button class="accordion-button sub-title collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#Huisvesting-vulling-flush-collapseTwo" aria-expanded="false" aria-controls="Huisvesting-vulling-flush-collapseTwo">
+											</div>
+											<div class="accordion-item">
+												<h2 class="accordion-header" id="Huisvesting-sub-flush-headingTwo">
+													<button class="accordion-button sub-title collapsed" type="button"
+														data-bs-toggle="collapse"
+														data-bs-target="#Huisvesting-vulling-flush-collapseTwo"
+														aria-expanded="false"
+														aria-controls="Huisvesting-vulling-flush-collapseTwo">
 														Vulling
 													</button>
-													</h2>
-													<div id="Huisvesting-vulling-flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="Huisvesting-sub-flush-headingTwo" data-bs-parent="#Huisvesting-sub-accordion">
+												</h2>
+												<div id="Huisvesting-vulling-flush-collapseTwo"
+													class="accordion-collapse collapse"
+													aria-labelledby="Huisvesting-sub-flush-headingTwo"
+													data-bs-parent="#Huisvesting-sub-accordion">
 													<ul>
 														<li><a href="#">Synthetisch</a></li>
 														<li><a href="#">Kapok</a></li>
@@ -805,15 +975,22 @@
 														<li><a href="#">Latex</a></li>
 														<li><a href="#">Latex Ilke</a></li>
 													</ul>
-													</div>
 												</div>
-												<div class="accordion-item">
-													<h2 class="accordion-header" id="Huisvesting-sub-flush-headingThree">
-													<button class="accordion-button sub-title collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#Huisvesting-merk-flush-collapseThree" aria-expanded="false" aria-controls="Huisvesting-merk-flush-collapseThree">
+											</div>
+											<div class="accordion-item">
+												<h2 class="accordion-header" id="Huisvesting-sub-flush-headingThree">
+													<button class="accordion-button sub-title collapsed" type="button"
+														data-bs-toggle="collapse"
+														data-bs-target="#Huisvesting-merk-flush-collapseThree"
+														aria-expanded="false"
+														aria-controls="Huisvesting-merk-flush-collapseThree">
 														Merk
 													</button>
-													</h2>
-													<div id="Huisvesting-merk-flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="Huisvesting-sub-flush-headingThree" data-bs-parent="#Huisvesting-sub-accordion">
+												</h2>
+												<div id="Huisvesting-merk-flush-collapseThree"
+													class="accordion-collapse collapse"
+													aria-labelledby="Huisvesting-sub-flush-headingThree"
+													data-bs-parent="#Huisvesting-sub-accordion">
 													<ul>
 														<li><a href="#">Zydante Swiss Tech</a></li>
 														<li><a href="#">Dream Fit</a></li>
@@ -821,44 +998,61 @@
 														<li><a href="#">Cool Sleeper</a></li>
 														<li><a href="#">Dr. Fit</a></li>
 													</ul>
-													</div>
 												</div>
 											</div>
-											<!--Huisvesting sub Accordion end-->
+										</div>
+										<!--Huisvesting sub Accordion end-->
 									</div>
-								  </div>
 								</div>
-								<div class="accordion-item">
-								  <h2 class="accordion-header" id="flush-headingSeven">
-									<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseSeven" aria-expanded="false" aria-controls="flush-collapseThree">
+							</div>
+							<div class="accordion-item">
+								<h2 class="accordion-header" id="flush-headingSeven">
+									<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+										data-bs-target="#flush-collapseSeven" aria-expanded="false"
+										aria-controls="flush-collapseThree">
 										Bedsprei
 									</button>
-								  </h2>
-								  <div id="flush-collapseSeven" class="accordion-collapse collapse" aria-labelledby="flush-headingSeven" data-bs-parent="#accordionFlushNav">
+								</h2>
+								<div id="flush-collapseSeven" class="accordion-collapse collapse"
+									aria-labelledby="flush-headingSeven" data-bs-parent="#accordionFlushNav">
 									<div class="accordion-body">
-											 <!--Bedsprei sub Accordion start-->
-											<div class="accordion accordion-flush" id="Bedsprei-sub-accordion">
-												<div class="accordion-item">
-													<h2 class="accordion-header" id="Bedsprei-sub-flush-headingOne">
-													<button class="accordion-button sub-title collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#Bedsprei-soort-flush-collapseOne" aria-expanded="false" aria-controls="Bedsprei-soort-flush-collapseOne">
+										<!--Bedsprei sub Accordion start-->
+										<div class="accordion accordion-flush" id="Bedsprei-sub-accordion">
+											<div class="accordion-item">
+												<h2 class="accordion-header" id="Bedsprei-sub-flush-headingOne">
+													<button class="accordion-button sub-title collapsed" type="button"
+														data-bs-toggle="collapse"
+														data-bs-target="#Bedsprei-soort-flush-collapseOne"
+														aria-expanded="false"
+														aria-controls="Bedsprei-soort-flush-collapseOne">
 														Soort
 													</button>
-													</h2>
-													<div id="Bedsprei-soort-flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="Bedsprei-sub-flush-headingOne" data-bs-parent="#Bedsprei-sub-accordion">
+												</h2>
+												<div id="Bedsprei-soort-flush-collapseOne"
+													class="accordion-collapse collapse"
+													aria-labelledby="Bedsprei-sub-flush-headingOne"
+													data-bs-parent="#Bedsprei-sub-accordion">
 													<ul>
 														<li><a href="#">Punt kussen</a></li>
 														<li><a href="#">Box kussen</a></li>
-														<li><a href="#">Ortho kussen   </a></li>
+														<li><a href="#">Ortho kussen </a></li>
 													</ul>
-													</div>
 												</div>
-												<div class="accordion-item">
-													<h2 class="accordion-header" id="Bedsprei-sub-flush-headingTwo">
-													<button class="accordion-button sub-title collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#Bedsprei-vulling-flush-collapseTwo" aria-expanded="false" aria-controls="Bedsprei-vulling-flush-collapseTwo">
+											</div>
+											<div class="accordion-item">
+												<h2 class="accordion-header" id="Bedsprei-sub-flush-headingTwo">
+													<button class="accordion-button sub-title collapsed" type="button"
+														data-bs-toggle="collapse"
+														data-bs-target="#Bedsprei-vulling-flush-collapseTwo"
+														aria-expanded="false"
+														aria-controls="Bedsprei-vulling-flush-collapseTwo">
 														Vulling
 													</button>
-													</h2>
-													<div id="Bedsprei-vulling-flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="Bedsprei-sub-flush-headingTwo" data-bs-parent="#Bedsprei-sub-accordion">
+												</h2>
+												<div id="Bedsprei-vulling-flush-collapseTwo"
+													class="accordion-collapse collapse"
+													aria-labelledby="Bedsprei-sub-flush-headingTwo"
+													data-bs-parent="#Bedsprei-sub-accordion">
 													<ul>
 														<li><a href="#">Synthetisch</a></li>
 														<li><a href="#">Kapok</a></li>
@@ -870,15 +1064,22 @@
 														<li><a href="#">Latex</a></li>
 														<li><a href="#">Latex Ilke</a></li>
 													</ul>
-													</div>
 												</div>
-												<div class="accordion-item">
-													<h2 class="accordion-header" id="Bedsprei-sub-flush-headingThree">
-													<button class="accordion-button sub-title collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#Bedsprei-merk-flush-collapseThree" aria-expanded="false" aria-controls="Bedsprei-merk-flush-collapseThree">
+											</div>
+											<div class="accordion-item">
+												<h2 class="accordion-header" id="Bedsprei-sub-flush-headingThree">
+													<button class="accordion-button sub-title collapsed" type="button"
+														data-bs-toggle="collapse"
+														data-bs-target="#Bedsprei-merk-flush-collapseThree"
+														aria-expanded="false"
+														aria-controls="Bedsprei-merk-flush-collapseThree">
 														Merk
 													</button>
-													</h2>
-													<div id="Bedsprei-merk-flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="Bedsprei-sub-flush-headingThree" data-bs-parent="#Bedsprei-sub-accordion">
+												</h2>
+												<div id="Bedsprei-merk-flush-collapseThree"
+													class="accordion-collapse collapse"
+													aria-labelledby="Bedsprei-sub-flush-headingThree"
+													data-bs-parent="#Bedsprei-sub-accordion">
 													<ul>
 														<li><a href="#">Zydante Swiss Tech</a></li>
 														<li><a href="#">Dream Fit</a></li>
@@ -886,552 +1087,628 @@
 														<li><a href="#">Cool Sleeper</a></li>
 														<li><a href="#">Dr. Fit</a></li>
 													</ul>
-													</div>
 												</div>
 											</div>
-											<!--Bedsprei sub Accordion end-->
+										</div>
+										<!--Bedsprei sub Accordion end-->
 									</div>
-								  </div>
 								</div>
 							</div>
 						</div>
 					</div>
-					<!-- megamenu end -->
+				</div>
+				<!-- megamenu end -->
+			</div>
+		</div>
+	</header>
+	<!-- header section end  -->
+
+	<!-- cart section start -->
+	<div class="offcanvas offcanvas-end" tabindex="-1" id="cart-right" aria-labelledby="cart-rightLabel">
+		<div class="offcanvas-header">
+			<button class="d-flex align-items-center" type="button" data-bs-dismiss="offcanvas" aria-label="Close"><img
+					src="assets/images/icons/arrow-left.png" alt="" class="pe-2"> Verder winkelen</button>
+		</div>
+		<div class="offcanvas-body ps-sm-4 position-relative">
+			<ul class="product-cart">
+				<li class="cart-item d-flex align-items-center">
+					<div class="product-img">
+						<a href="#"><img src="assets/images/cart/image-1.jpg" alt="product-img" class="img-fluid"></a>
+					</div>
+					<div class="product-text">
+						<a href="#" class="product-description">Doctor Fit Dream Nature | box pillow</a>
+						<div class="d-flex justify-content-between">
+							<p class="product-price">€9.95</p>
+							<div class="d-flex align-items-center product-quantity-box">
+								<button>-</button>
+								<span class="product-quantity">1</span>
+								<button>+</button>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li class="cart-item d-flex align-items-center">
+					<div class="product-img">
+						<a href="#"><img src="assets/images/cart/image-2.png" alt="product-img" class="img-fluid"></a>
+					</div>
+					<div class="product-text">
+						<a href="#" class="product-description">*merk/collectie* | *Type/ kleur*</a>
+						<div class="d-flex justify-content-between">
+							<p class="product-price">€00.00</p>
+							<div class="d-flex align-items-center product-quantity-box">
+								<button>-</button>
+								<span class="product-quantity">1</span>
+								<button>+</button>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li class="cart-item d-flex align-items-center">
+					<div class="product-img">
+						<a href="#"><img src="assets/images/cart/image-2.png" alt="product-img" class="img-fluid"></a>
+					</div>
+					<div class="product-text">
+						<a href="#" class="product-description">*merk/collectie* | *Type/kleur*</a>
+						<div class="d-flex justify-content-between">
+							<p class="product-price">€9.95</p>
+							<div class="d-flex align-items-center product-quantity-box">
+								<button>-</button>
+								<span class="product-quantity">1</span>
+								<button>+</button>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li class="cart-item d-flex align-items-center">
+					<div class="product-img">
+						<a href="#"><img src="assets/images/cart/image-1.jpg" alt="product-img" class="img-fluid"></a>
+					</div>
+					<div class="product-text">
+						<a href="#" class="product-description">Doctor Fit Dream Nature | box pillow</a>
+						<div class="d-flex justify-content-between">
+							<p class="product-price">€9.95</p>
+							<div class="d-flex align-items-center product-quantity-box">
+								<button>-</button>
+								<span class="product-quantity">1</span>
+								<button>+</button>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li class="cart-item d-flex align-items-center">
+					<div class="product-img">
+						<a href="#"><img src="assets/images/cart/image-2.png" alt="product-img" class="img-fluid"></a>
+					</div>
+					<div class="product-text">
+						<a href="#" class="product-description">*merk/collectie* | *Type/ kleur*</a>
+						<div class="d-flex justify-content-between">
+							<p class="product-price">€00.00</p>
+							<div class="d-flex align-items-center product-quantity-box">
+								<button>-</button>
+								<span class="product-quantity">1</span>
+								<button>+</button>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li class="cart-item d-flex align-items-center">
+					<div class="product-img">
+						<a href="#"><img src="assets/images/cart/image-2.png" alt="product-img" class="img-fluid"></a>
+					</div>
+					<div class="product-text">
+						<a href="#" class="product-description">*merk/collectie* | *Type/kleur*</a>
+						<div class="d-flex justify-content-between">
+							<p class="product-price">€9.95</p>
+							<div class="d-flex align-items-center product-quantity-box">
+								<button>-</button>
+								<span class="product-quantity">1</span>
+								<button>+</button>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li class="cart-item d-flex align-items-center">
+					<div class="product-img">
+						<a href="#"><img src="assets/images/cart/image-1.jpg" alt="product-img" class="img-fluid"></a>
+					</div>
+					<div class="product-text">
+						<a href="#" class="product-description">Doctor Fit Dream Nature | box pillow</a>
+						<div class="d-flex justify-content-between">
+							<p class="product-price">€9.95</p>
+							<div class="d-flex align-items-center product-quantity-box">
+								<button>-</button>
+								<span class="product-quantity">1</span>
+								<button>+</button>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li class="cart-item d-flex align-items-center">
+					<div class="product-img">
+						<a href="#"><img src="assets/images/cart/image-2.png" alt="product-img" class="img-fluid"></a>
+					</div>
+					<div class="product-text">
+						<a href="#" class="product-description">*merk/collectie* | *Type/ kleur*</a>
+						<div class="d-flex justify-content-between">
+							<p class="product-price">€00.00</p>
+							<div class="d-flex align-items-center product-quantity-box">
+								<button>-</button>
+								<span class="product-quantity">1</span>
+								<button>+</button>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li class="cart-item d-flex align-items-center">
+					<div class="product-img">
+						<a href="#"><img src="assets/images/cart/image-2.png" alt="product-img" class="img-fluid"></a>
+					</div>
+					<div class="product-text">
+						<a href="#" class="product-description">*merk/collectie* | *Type/kleur*</a>
+						<div class="d-flex justify-content-between">
+							<p class="product-price">€9.95</p>
+							<div class="d-flex align-items-center product-quantity-box">
+								<button>-</button>
+								<span class="product-quantity">1</span>
+								<button>+</button>
+							</div>
+						</div>
+					</div>
+				</li>
+			</ul>
+			<div class="cart-footer">
+				<p class="separator"> Verzendkosten worden tijdens het afrekenen berekend</p>
+				<div class="d-flex justify-content-between pt-3 pb-4 fs-5">
+					<p>Subtotaal</p>
+					<p>€ 00.00</p>
+				</div>
+				<div class="text-center">
+					<a href="#" class="btn-border">Afrekenen</a>
 				</div>
 			</div>
-		</header>
-		<!-- header section end  -->
+		</div>
+	</div>
+	<!-- cart section end -->
 
-		<!-- Banner Section Start  -->
-		<section
-			class="banner"
-			style="
+	<!-- Banner Section Start  -->
+	<section class="banner" style="
 				background: url('./assets/images/bg-three.jpg') center center/cover
 					no-repeat;
-			"
-		>
-			<div class="container">
-				<div class="banner-content">
-					<div class="banner-box">
-						<span>Maak van uw huis een thuis</span>
-						<h2>
-							Producten: <br />
-							*product catagorie*
-						</h2>
+			">
+		<div class="container">
+			<div class="banner-content">
+				<div class="banner-box">
+					<span>Maak van uw huis een thuis</span>
+					<h2>
+						Producten: <br />
+						*product catagorie*
+					</h2>
+					<div>
+						<a href="#">
+							<img src="assets/images/icons/arrow.png" alt="" />
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- Banner Section End  -->
+
+	<div class="filter">
+		<div class="container-fluid">
+			<div class="row">
+				<!-- Filter -->
+				<div class="col-xl-2 col-lg-3">
+					<div class="filter-sidebar">
+						<h2>Filters</h2>
+						<div class="accordion" id="accordionExample">
+							<div class="accordion-item">
+								<h2 class="accordion-header" id="headingOne">
+									<button class="accordion-button" type="button" data-bs-toggle="collapse"
+										data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+										Format
+									</button>
+								</h2>
+								<div id="collapseOne" class="accordion-collapse collapse show"
+									aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+									<div class="accordion-body">
+										<p>filter item</p>
+									</div>
+								</div>
+							</div>
+							<div class="accordion-item">
+								<h2 class="accordion-header" id="headingTwo">
+									<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+										data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+										Materiaal
+									</button>
+								</h2>
+								<div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+									data-bs-parent="#accordionExample">
+									<div class="accordion-body">
+										<p>filter item</p>
+									</div>
+								</div>
+							</div>
+							<div class="accordion-item">
+								<h2 class="accordion-header" id="headingThree">
+									<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+										data-bs-target="#collapseThree" aria-expanded="false"
+										aria-controls="collapseThree">
+										Kleur
+									</button>
+								</h2>
+								<div id="collapseThree" class="accordion-collapse collapse"
+									aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+									<div class="accordion-body">
+										<p>filter item</p>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<!-- price Range  -->
+						<div class="filter-range">
+							<h2>Prijs</h2>
+							<span id="price-range"></span>
+							<div class="filter-range-value">
+								<span id="lower-value"></span>
+								<span id="upper-value"></span>
+							</div>
+						</div>
+
+						<div class="filter-action">
+							<button class="hover-effect">Toepassen</button>
+						</div>
+					</div>
+
+					<div class="filter-promo filter-promo-one">
+						<a href="#">
+							<img src="assets/images/promo/ads-eight.jpg" alt="" />
+						</a>
+
+						<div class="filter-promo__overlay">
+							<img src="assets/images/pattern-tigger.png" alt="" />
+						</div>
+					</div>
+				</div>
+				<div class="col-xl-8 col-lg-9">
+					<div class="filter-sorting">
 						<div>
-							<a href="#">
-								<img src="assets/images/icons/arrow.png" alt="" />
-							</a>
+							<h2>Sorteer op :</h2>
+							<select name="price" id="optionRange">
+								<option value="1">Prijs</option>
+								<option value="1">item</option>
+								<option value="1">item</option>
+							</select>
+
+							<button class="hover-effect">
+								<img src="assets/images/icons/arrows.png" alt="" />
+							</button>
+						</div>
+					</div>
+					<div class="filter-product">
+						<div class="row">
+							<div class="col-lg-4 col-sm-6">
+								<div class="product-card">
+									<a href="individual-page.html" class="product-card__img">
+										<img src="assets/images/product/1.jpg" alt="" />
+									</a>
+									<div class="product-card__info">
+										<a href="individual-page.html">
+											Hotel Home Collection | Devon Antraciet
+										</a>
+										<div class="price">
+											<p>
+												<del>€ 00,00</del>
+											</p>
+											<p>€ 00,00</p>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-lg-4 col-sm-6">
+								<div class="product-card">
+									<a href="individual-page.html" class="product-card__img">
+										<img src="assets/images/product/1.jpg" alt="" />
+									</a>
+									<div class="product-card__info">
+										<a href="individual-page.html">
+											Hotel Home Collection | Devon Antraciet
+										</a>
+										<div class="price">
+											<p>
+												<del>€ 00,00</del>
+											</p>
+											<p>€ 00,00</p>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-lg-4 col-sm-6">
+								<div class="product-card">
+									<a href="individual-page.html" class="product-card__img">
+										<img src="assets/images/product/1.jpg" alt="" />
+									</a>
+									<div class="product-card__info">
+										<a href="individual-page.html">
+											Hotel Home Collection | Devon Antraciet
+										</a>
+										<div class="price">
+											<p>
+												<del>€ 00,00</del>
+											</p>
+											<p>€ 00,00</p>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-lg-4 col-sm-6">
+								<div class="product-card">
+									<a href="individual-page.html" class="product-card__img">
+										<img src="assets/images/product/1.jpg" alt="" />
+									</a>
+									<div class="product-card__info">
+										<a href="individual-page.html">
+											Hotel Home Collection | Devon Antraciet
+										</a>
+										<div class="price">
+											<p>
+												<del>€ 00,00</del>
+											</p>
+											<p>€ 00,00</p>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-lg-4 col-sm-6">
+								<div class="product-card">
+									<a href="individual-page.html" class="product-card__img">
+										<img src="assets/images/product/1.jpg" alt="" />
+									</a>
+									<div class="product-card__info">
+										<a href="individual-page.html">
+											Hotel Home Collection | Devon Antraciet
+										</a>
+										<div class="price">
+											<p>
+												<del>€ 00,00</del>
+											</p>
+											<p>€ 00,00</p>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-lg-4 col-sm-6">
+								<div class="product-card">
+									<a href="individual-page.html" class="product-card__img">
+										<img src="assets/images/product/1.jpg" alt="" />
+									</a>
+									<div class="product-card__info">
+										<a href="individual-page.html">
+											Hotel Home Collection | Devon Antraciet
+										</a>
+										<div class="price">
+											<p>
+												<del>€ 00,00</del>
+											</p>
+											<p>€ 00,00</p>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-lg-4 col-sm-6">
+								<div class="product-card">
+									<a href="individual-page.html" class="product-card__img">
+										<img src="assets/images/product/1.jpg" alt="" />
+									</a>
+									<div class="product-card__info">
+										<a href="individual-page.html">
+											Hotel Home Collection | Devon Antraciet
+										</a>
+										<div class="price">
+											<p>
+												<del>€ 00,00</del>
+											</p>
+											<p>€ 00,00</p>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-lg-4 col-sm-6">
+								<div class="product-card">
+									<a href="individual-page.html" class="product-card__img">
+										<img src="assets/images/product/1.jpg" alt="" />
+									</a>
+									<div class="product-card__info">
+										<a href="individual-page.html">
+											Hotel Home Collection | Devon Antraciet
+										</a>
+										<div class="price">
+											<p>
+												<del>€ 00,00</del>
+											</p>
+											<p>€ 00,00</p>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-lg-4 col-sm-6">
+								<div class="product-card">
+									<a href="individual-page.html" class="product-card__img">
+										<img src="assets/images/product/1.jpg" alt="" />
+									</a>
+									<div class="product-card__info">
+										<a href="individual-page.html">
+											Hotel Home Collection | Devon Antraciet
+										</a>
+										<div class="price">
+											<p>
+												<del>€ 00,00</del>
+											</p>
+											<p>€ 00,00</p>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="filter-product__pagination">
+							<div>
+								<span>Pagina: </span>
+								<select name="pagination" id="pagination">
+									<option value="1">1</option>
+									<option value="2">2</option>
+									<option value="3">10</option>
+								</select>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-xl-2">
+					<div class="filter-promo filter-promo-two">
+						<a href="#">
+							<img src="assets/images/promo/ads-seven.jpg" alt="" class="d-xl-inline-block d-none" />
+							<img src="assets/images/promo//ads-five.jpg" alt="" class="d-xl-none d-inline-block" />
+						</a>
+
+						<div class="filter-promo__overlay">
+							<img src="assets/images/pattern-tigger-promo.png" alt="" />
 						</div>
 					</div>
 				</div>
 			</div>
-		</section>
-		<!-- Banner Section End  -->
+		</div>
 
-		<div class="filter">
+		<div class="filter__overlay">
+			<div class="item item-one">
+				<img src="assets/images/shape/shape-one.png" alt="" />
+			</div>
+			<div class="item item-two">
+				<img src="assets/images/shape/shape-three.png" alt="" />
+			</div>
+			<div class="item item-three">
+				<img src="assets/images/shape/shape-seven.png" alt="" />
+			</div>
+			<div class="item item-four">
+				<img src="assets/images/shape/shape-eight.png" alt="" />
+			</div>
+			<div class="item item-five">
+				<img src="assets/images/shape/shape-three.png" alt="" />
+			</div>
+			<div class="item item-six">
+				<img src="assets/images/shape/shape-eight.png" alt="" />
+			</div>
+		</div>
+	</div>
+
+	<!-- Footer Section Start  -->
+	<footer class="footer">
+		<div class="footer-top__content">
 			<div class="container-fluid">
 				<div class="row">
-					<!-- Filter -->
-					<div class="col-xl-2 col-lg-3">
-						<div class="filter-sidebar">
-							<h2>Filters</h2>
-							<div class="accordion" id="accordionExample">
-								<div class="accordion-item">
-									<h2 class="accordion-header" id="headingOne">
-										<button
-											class="accordion-button"
-											type="button"
-											data-bs-toggle="collapse"
-											data-bs-target="#collapseOne"
-											aria-expanded="true"
-											aria-controls="collapseOne"
-										>
-											Format
-										</button>
-									</h2>
-									<div
-										id="collapseOne"
-										class="accordion-collapse collapse show"
-										aria-labelledby="headingOne"
-										data-bs-parent="#accordionExample"
-									>
-										<div class="accordion-body">
-											<p>filter item</p>
-										</div>
-									</div>
+					<div class="col-lg-4">
+						<div class="footer-info">
+							<h2>BLIJF OP DE HOOGTE</h2>
+							<p>
+								Schrijf u in voor de nieuwsbrief en blijf op de
+								hoogte.
+							</p>
+							<form action="#">
+								<div class="search-field">
+									<input type="email" placeholder="e-mail" />
+									<button type="button" class="hover-effect">
+										Inschrijven
+									</button>
 								</div>
-								<div class="accordion-item">
-									<h2 class="accordion-header" id="headingTwo">
-										<button
-											class="accordion-button collapsed"
-											type="button"
-											data-bs-toggle="collapse"
-											data-bs-target="#collapseTwo"
-											aria-expanded="false"
-											aria-controls="collapseTwo"
-										>
-											Materiaal
-										</button>
-									</h2>
-									<div
-										id="collapseTwo"
-										class="accordion-collapse collapse"
-										aria-labelledby="headingTwo"
-										data-bs-parent="#accordionExample"
-									>
-										<div class="accordion-body">
-											<p>filter item</p>
-										</div>
-									</div>
-								</div>
-								<div class="accordion-item">
-									<h2 class="accordion-header" id="headingThree">
-										<button
-											class="accordion-button collapsed"
-											type="button"
-											data-bs-toggle="collapse"
-											data-bs-target="#collapseThree"
-											aria-expanded="false"
-											aria-controls="collapseThree"
-										>
-											Kleur
-										</button>
-									</h2>
-									<div
-										id="collapseThree"
-										class="accordion-collapse collapse"
-										aria-labelledby="headingThree"
-										data-bs-parent="#accordionExample"
-									>
-										<div class="accordion-body">
-											<p>filter item</p>
-										</div>
-									</div>
-								</div>
-							</div>
-
-							<!-- price Range  -->
-							<div class="filter-range">
-								<h2>Prijs</h2>
-								<span id="price-range"></span>
-								<div class="filter-range-value">
-									<span id="lower-value"></span>
-									<span id="upper-value"></span>
-								</div>
-							</div>
-
-							<div class="filter-action">
-								<button class="hover-effect">Toepassen</button>
-							</div>
-						</div>
-
-						<div class="filter-promo filter-promo-one">
-							<a href="#">
-								<img src="assets/images/promo/ads-eight.jpg" alt="" />
-							</a>
-
-							<div class="filter-promo__overlay">
-								<img src="assets/images/pattern-tigger.png" alt="" />
-							</div>
+							</form>
 						</div>
 					</div>
-					<div class="col-xl-8 col-lg-9">
-						<div class="filter-sorting">
-							<div>
-								<h2>Sorteer op :</h2>
-								<select name="price" id="optionRange">
-									<option value="1">Prijs</option>
-									<option value="1">item</option>
-									<option value="1">item</option>
-								</select>
-
-								<button class="hover-effect">
-									<img src="assets/images/icons/arrows.png" alt="" />
-								</button>
-							</div>
-						</div>
-						<div class="filter-product">
-							<div class="row">
-								<div class="col-lg-4 col-sm-6">
-									<div class="product-card">
-										<a
-											href="individual-page.html"
-											class="product-card__img"
-										>
-											<img
-												src="assets/images/product/1.jpg"
-												alt=""
-											/>
-										</a>
-										<div class="product-card__info">
-											<a href="individual-page.html">
-												Hotel Home Collection | Devon Antraciet
-											</a>
-											<div class="price">
-												<p>
-													<del>€ 00,00</del>
-												</p>
-												<p>€ 00,00</p>
-											</div>
-										</div>
-									</div>
-								</div>
-								<div class="col-lg-4 col-sm-6">
-									<div class="product-card">
-										<a
-											href="individual-page.html"
-											class="product-card__img"
-										>
-											<img
-												src="assets/images/product/1.jpg"
-												alt=""
-											/>
-										</a>
-										<div class="product-card__info">
-											<a href="individual-page.html">
-												Hotel Home Collection | Devon Antraciet
-											</a>
-											<div class="price">
-												<p>
-													<del>€ 00,00</del>
-												</p>
-												<p>€ 00,00</p>
-											</div>
-										</div>
-									</div>
-								</div>
-								<div class="col-lg-4 col-sm-6">
-									<div class="product-card">
-										<a
-											href="individual-page.html"
-											class="product-card__img"
-										>
-											<img
-												src="assets/images/product/1.jpg"
-												alt=""
-											/>
-										</a>
-										<div class="product-card__info">
-											<a href="individual-page.html">
-												Hotel Home Collection | Devon Antraciet
-											</a>
-											<div class="price">
-												<p>
-													<del>€ 00,00</del>
-												</p>
-												<p>€ 00,00</p>
-											</div>
-										</div>
-									</div>
-								</div>
-								<div class="col-lg-4 col-sm-6">
-									<div class="product-card">
-										<a
-											href="individual-page.html"
-											class="product-card__img"
-										>
-											<img
-												src="assets/images/product/1.jpg"
-												alt=""
-											/>
-										</a>
-										<div class="product-card__info">
-											<a href="individual-page.html">
-												Hotel Home Collection | Devon Antraciet
-											</a>
-											<div class="price">
-												<p>
-													<del>€ 00,00</del>
-												</p>
-												<p>€ 00,00</p>
-											</div>
-										</div>
-									</div>
-								</div>
-								<div class="col-lg-4 col-sm-6">
-									<div class="product-card">
-										<a
-											href="individual-page.html"
-											class="product-card__img"
-										>
-											<img
-												src="assets/images/product/1.jpg"
-												alt=""
-											/>
-										</a>
-										<div class="product-card__info">
-											<a href="individual-page.html">
-												Hotel Home Collection | Devon Antraciet
-											</a>
-											<div class="price">
-												<p>
-													<del>€ 00,00</del>
-												</p>
-												<p>€ 00,00</p>
-											</div>
-										</div>
-									</div>
-								</div>
-								<div class="col-lg-4 col-sm-6">
-									<div class="product-card">
-										<a
-											href="individual-page.html"
-											class="product-card__img"
-										>
-											<img
-												src="assets/images/product/1.jpg"
-												alt=""
-											/>
-										</a>
-										<div class="product-card__info">
-											<a href="individual-page.html">
-												Hotel Home Collection | Devon Antraciet
-											</a>
-											<div class="price">
-												<p>
-													<del>€ 00,00</del>
-												</p>
-												<p>€ 00,00</p>
-											</div>
-										</div>
-									</div>
-								</div>
-								<div class="col-lg-4 col-sm-6">
-									<div class="product-card">
-										<a
-											href="individual-page.html"
-											class="product-card__img"
-										>
-											<img
-												src="assets/images/product/1.jpg"
-												alt=""
-											/>
-										</a>
-										<div class="product-card__info">
-											<a href="individual-page.html">
-												Hotel Home Collection | Devon Antraciet
-											</a>
-											<div class="price">
-												<p>
-													<del>€ 00,00</del>
-												</p>
-												<p>€ 00,00</p>
-											</div>
-										</div>
-									</div>
-								</div>
-								<div class="col-lg-4 col-sm-6">
-									<div class="product-card">
-										<a
-											href="individual-page.html"
-											class="product-card__img"
-										>
-											<img
-												src="assets/images/product/1.jpg"
-												alt=""
-											/>
-										</a>
-										<div class="product-card__info">
-											<a href="individual-page.html">
-												Hotel Home Collection | Devon Antraciet
-											</a>
-											<div class="price">
-												<p>
-													<del>€ 00,00</del>
-												</p>
-												<p>€ 00,00</p>
-											</div>
-										</div>
-									</div>
-								</div>
-								<div class="col-lg-4 col-sm-6">
-									<div class="product-card">
-										<a
-											href="individual-page.html"
-											class="product-card__img"
-										>
-											<img
-												src="assets/images/product/1.jpg"
-												alt=""
-											/>
-										</a>
-										<div class="product-card__info">
-											<a href="individual-page.html">
-												Hotel Home Collection | Devon Antraciet
-											</a>
-											<div class="price">
-												<p>
-													<del>€ 00,00</del>
-												</p>
-												<p>€ 00,00</p>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="filter-product__pagination">
-								<div>
-									<span>Pagina: </span>
-									<select name="pagination" id="pagination">
-										<option value="1">1</option>
-										<option value="2">2</option>
-										<option value="3">10</option>
-									</select>
-								</div>
-							</div>
+					<div class="col-sm-6 col-md-4 col-lg-2 offset-lg-1">
+						<div class="footer-menu">
+							<h2>Klantenservice</h2>
+							<ul>
+								<li><a href="#">Over ons </a></li>
+								<li><a href="#">Contact</a></li>
+								<li><a href="#">Privacybeleid</a></li>
+								<li><a href="#">Algemene voorwaarden</a></li>
+							</ul>
 						</div>
 					</div>
-					<div class="col-xl-2">
-						<div class="filter-promo filter-promo-two">
-							<a href="#">
-								<img src="assets/images/promo/ads-seven.jpg" alt="" class="d-xl-inline-block d-none"/>
-								<img src="assets/images/promo//ads-five.jpg" alt="" class="d-xl-none d-inline-block" />
-							</a>
-
-							<div class="filter-promo__overlay">
-								<img src="assets/images/pattern-tigger-promo.png" alt="" />
-							</div>
+					<div class="col-sm-6 col-md-4 col-lg-2">
+						<div class="footer-menu">
+							<h2>Account</h2>
+							<ul>
+								<li><a href="#">Mijn MPS Textiles </a></li>
+								<li><a href="#">Inloggen</a></li>
+								<li><a href="#">Winkelwagen</a></li>
+								<li><a href="#">Afrekenen</a></li>
+							</ul>
 						</div>
 					</div>
-				</div>
-			</div>
-
-			<div class="filter__overlay">
-				<div class="item item-one">
-					<img src="assets/images/shape/shape-one.png" alt="" />
-				</div>
-				<div class="item item-two">
-					<img src="assets/images/shape/shape-three.png" alt="" />
-				</div>
-				<div class="item item-three">
-					<img src="assets/images/shape/shape-seven.png" alt="" />
-				</div>
-				<div class="item item-four">
-					<img src="assets/images/shape/shape-eight.png" alt="" />
-				</div>
-				<div class="item item-five">
-					<img src="assets/images/shape/shape-three.png" alt="" />
-				</div>
-				<div class="item item-six">
-					<img src="assets/images/shape/shape-eight.png" alt="" />
-				</div>
-			</div>
-		</div>
-
-		<!-- Footer Section Start  -->
-		<footer class="footer">
-			<div class="footer-top__content">
-				<div class="container-fluid">
-					<div class="row">
-						<div class="col-lg-4">
-							<div class="footer-info">
-								<h2>BLIJF OP DE HOOGTE</h2>
-								<p>
-									Schrijf u in voor de nieuwsbrief en blijf op de
-									hoogte.
-								</p>
-								<form action="#">
-									<div class="search-field">
-										<input type="email" placeholder="e-mail" />
-										<button type="button" class="hover-effect">
-											Inschrijven
-										</button>
-									</div>
-								</form>
-							</div>
+					<div class="col-md-4 col-lg-3">
+						<div class="footer-menu">
+							<h2>Contact</h2>
+							<ul>
+								<li><a href="#"> Boekweitstraat 90 </a></li>
+								<li><a href="#">2153 GL Nieuw-Vennep </a></li>
+								<li><a href="#">Nederland</a></li>
+								<li><a href="#">Tel : +31(0)252-626565 </a></li>
+								<li><a href="#">Fax : +31(0)252-625590 </a></li>
+								<li>
+									<a href="#">Kamer van Koophandel : 34098484</a>
+								</li>
+							</ul>
 						</div>
-						<div class="col-sm-6 col-md-4 col-lg-2 offset-lg-1">
-							<div class="footer-menu">
-								<h2>Klantenservice</h2>
-								<ul>
-									<li><a href="#">Over ons </a></li>
-									<li><a href="#">Contact</a></li>
-									<li><a href="#">Privacybeleid</a></li>
-									<li><a href="#">Algemene voorwaarden</a></li>
-								</ul>
-							</div>
-						</div>
-						<div class="col-sm-6 col-md-4 col-lg-2">
-							<div class="footer-menu">
-								<h2>Account</h2>
-								<ul>
-									<li><a href="#">Mijn MPS Textiles </a></li>
-									<li><a href="#">Inloggen</a></li>
-									<li><a href="#">Winkelwagen</a></li>
-									<li><a href="#">Afrekenen</a></li>
-								</ul>
-							</div>
-						</div>
-						<div class="col-md-4 col-lg-3">
-							<div class="footer-menu">
-								<h2>Contact</h2>
-								<ul>
-									<li><a href="#"> Boekweitstraat 90 </a></li>
-									<li><a href="#">2153 GL Nieuw-Vennep </a></li>
-									<li><a href="#">Nederland</a></li>
-									<li><a href="#">Tel : +31(0)252-626565 </a></li>
-									<li><a href="#">Fax : +31(0)252-625590 </a></li>
-									<li>
-										<a href="#">Kamer van Koophandel : 34098484</a>
-									</li>
-								</ul>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="footer-bottom__content">
-				<div class="container-fluid">
-					<div class="footer-copyright">
-						<ul>
-							<li>
-								<p>
-									copyright &copy; 2021 MPS Textiles. Alle rechten
-									voorbehouden <span> |</span>
-								</p>
-							</li>
-							<li>
-								<a href="#">Over MPS Textiles <span> |</span> </a>
-							</li>
-							<li>
-								<a href="#">Contact</a>
-							</li>
-						</ul>
-					</div>
-				</div>
-			</div>
-		</footer>
-		<!-- Footer Section End   -->
-
-		<!-- Modal -->
-		<div
-			class="modal fade"
-			id="searchModal"
-			tabindex="-1"
-			aria-labelledby="searchModalLabel"
-			aria-hidden="true"
-		>
-			<div class="modal-dialog">
-				<div class="modal-content">
-					<div class="modal-body px-2 py-1">
-						<form action="#">
-							<div class="search-field search-field--two">
-								<input type="text" placeholder="Search..." />
-								<button type="submit">Search</button>
-							</div>
-						</form>
 					</div>
 				</div>
 			</div>
 		</div>
+		<div class="footer-bottom__content">
+			<div class="container-fluid">
+				<div class="footer-copyright">
+					<ul>
+						<li>
+							<p>
+								copyright &copy; 2021 MPS Textiles. Alle rechten
+								voorbehouden <span> |</span>
+							</p>
+						</li>
+						<li>
+							<a href="#">Over MPS Textiles <span> |</span> </a>
+						</li>
+						<li>
+							<a href="#">Contact</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</footer>
+	<!-- Footer Section End   -->
 
-		<!-- All js Goes here -->
-		<script src="assets/js/jquery-3.6.0.min.js"></script>
-		<script src="assets/js/bootstrap.bundle.min.js"></script>
-		<script src="assets/js/countrySelect.min.js"></script>
-		<script src="assets/js/nouislider.min.js"></script>
-		<script src="assets/js/swiper-bundle.min.js "></script>
-		<script src="assets/js/app.js"></script>
-	</body>
+	<!-- Modal -->
+	<div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="searchModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-body px-2 py-1">
+					<form action="#">
+						<div class="search-field search-field--two">
+							<input type="text" placeholder="Search..." />
+							<button type="submit">Search</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- All js Goes here -->
+	<script src="assets/js/jquery-3.6.0.min.js"></script>
+	<script src="assets/js/bootstrap.bundle.min.js"></script>
+	<script src="assets/js/countrySelect.min.js"></script>
+	<script src="assets/js/nouislider.min.js"></script>
+	<script src="assets/js/swiper-bundle.min.js "></script>
+	<script src="assets/js/app.js"></script>
+</body>
+
 </html>
