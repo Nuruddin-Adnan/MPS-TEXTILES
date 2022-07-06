@@ -1,0 +1,97 @@
+.adres-toevoegen {
+    background: url(../images/adres-toevoegen/bg.png) no-repeat top center/cover;
+    padding: 80px 0;
+
+    &-heading {
+        font-size: 60px;
+        line-height: 35px;
+        margin-bottom: 60px;
+        font-family: "Book Antiqua";
+        text-align: center;
+        color: rgba(0, 0, 0, 0.8);
+
+        @include max(575px) {
+            font-size: 45px;
+        }
+    }
+
+    &-content {
+        background-color: #f0f0f0;
+        padding: 20px;
+    }
+
+    nav {
+        li {
+            a {
+                font-size: 22px;
+                font-weight: 300;
+                color: rgba(0, 0, 0, 0.8);
+                padding: 5px 0;
+                display: block;
+                border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+                margin-bottom: 15px;
+
+                &.active,
+                &:hover {
+                    font-weight: 400;
+                }
+            }
+        }
+    }
+
+
+    .adresgegevens {
+        &-heading {
+            font-size: 26px;
+            margin-bottom: 40px;
+            color: rgba(0, 0, 0, 0.8);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+            padding: 5px 0;
+        }
+
+        select,
+        input {
+            font-size: 16px;
+            padding: 16px 8px;
+            background-color: #dddfdf;
+            border: none;
+            color: rgba(0, 0, 0, 0.8);
+        }
+
+        input[type="checkbox"] {
+            padding: 0;
+            border-radius: 0;
+
+            &:focus {
+                box-shadow: none;
+            }
+        }
+
+        .form-check-input:checked[type="checkbox"] {
+            background-color: #5DA4D9;
+        }
+
+        .check-label {
+            font-size: 18px;
+            font-weight: 300;
+            color: rgba(0, 0, 0, 0.8);
+            margin-top: -3px;
+        }
+
+        .submit-btn {
+            width: auto;
+            padding: 6px 12px;
+            margin-top: 30px;
+        }
+    }
+
+    .back-btn {
+        font-size: 20px;
+        font-weight: 300;
+        color: rgba(0, 0, 0, 0.8);
+
+        img {
+            margin-top: -3px;
+        }
+    }
+}

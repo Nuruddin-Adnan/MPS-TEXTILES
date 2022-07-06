@@ -2668,4 +2668,82 @@ body {
 #cart-right .cart-footer .btn-border:hover {
   background-color: #000;
   color: #fff;
+}
+
+.adres-toevoegen {
+  background: url(../images/adres-toevoegen/bg.png) no-repeat top center/cover;
+  padding: 80px 0;
+}
+.adres-toevoegen-heading {
+  font-size: 60px;
+  line-height: 35px;
+  margin-bottom: 60px;
+  font-family: "Book Antiqua";
+  text-align: center;
+  color: rgba(0, 0, 0, 0.8);
+}
+@media (max-width: 575px) {
+  .adres-toevoegen-heading {
+    font-size: 45px;
+  }
+}
+.adres-toevoegen-content {
+  background-color: #f0f0f0;
+  padding: 20px;
+}
+.adres-toevoegen nav li a {
+  font-size: 22px;
+  font-weight: 300;
+  color: rgba(0, 0, 0, 0.8);
+  padding: 5px 0;
+  display: block;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+  margin-bottom: 15px;
+}
+.adres-toevoegen nav li a.active, .adres-toevoegen nav li a:hover {
+  font-weight: 400;
+}
+.adres-toevoegen .adresgegevens-heading {
+  font-size: 26px;
+  margin-bottom: 40px;
+  color: rgba(0, 0, 0, 0.8);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+  padding: 5px 0;
+}
+.adres-toevoegen .adresgegevens select,
+.adres-toevoegen .adresgegevens input {
+  font-size: 16px;
+  padding: 16px 8px;
+  background-color: #dddfdf;
+  border: none;
+  color: rgba(0, 0, 0, 0.8);
+}
+.adres-toevoegen .adresgegevens input[type=checkbox] {
+  padding: 0;
+  border-radius: 0;
+}
+.adres-toevoegen .adresgegevens input[type=checkbox]:focus {
+  box-shadow: none;
+}
+.adres-toevoegen .adresgegevens .form-check-input:checked[type=checkbox] {
+  background-color: #5DA4D9;
+}
+.adres-toevoegen .adresgegevens .check-label {
+  font-size: 18px;
+  font-weight: 300;
+  color: rgba(0, 0, 0, 0.8);
+  margin-top: -3px;
+}
+.adres-toevoegen .adresgegevens .submit-btn {
+  width: auto;
+  padding: 6px 12px;
+  margin-top: 30px;
+}
+.adres-toevoegen .back-btn {
+  font-size: 20px;
+  font-weight: 300;
+  color: rgba(0, 0, 0, 0.8);
+}
+.adres-toevoegen .back-btn img {
+  margin-top: -3px;
 }/*# sourceMappingURL=main.css.map */
