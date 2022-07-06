@@ -2698,7 +2698,7 @@ body {
   padding: 5px 0;
   display: block;
   border-bottom: 1px solid rgba(0, 0, 0, 0.4);
-  margin-bottom: 15px;
+  margin-bottom: 20px;
 }
 .adres-toevoegen nav li a.active, .adres-toevoegen nav li a:hover {
   font-weight: 400;
