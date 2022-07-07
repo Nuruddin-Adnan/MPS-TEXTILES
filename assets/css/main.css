@@ -2588,7 +2588,7 @@ body {
 }
 
 #cart-right .product-cart {
-  max-height: 65vh;
+  max-height: calc(100vh - 270px);
   overflow: auto;
   padding-right: 20px;
   /* width */
@@ -2648,8 +2648,11 @@ body {
 }
 #cart-right .cart-footer {
   position: absolute;
-  bottom: 30px;
+  bottom: 0px;
   width: calc(100% - 40px);
+  background-color: #fff;
+  padding-bottom: 30px;
+  padding-top: 20px;
 }
 #cart-right .cart-footer .separator {
   text-align: center;
