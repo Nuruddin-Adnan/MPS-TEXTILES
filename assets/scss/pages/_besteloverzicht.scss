@@ -1,0 +1,193 @@
+.besteloverzicht {
+    background: url(../images/besteloverzicht/besteloverzicht-bg.png) no-repeat top center/cover;
+    padding: 80px 0;
+
+    &-heading {
+        font-size: 60px;
+        line-height: 35px;
+        margin-bottom: 60px;
+        font-family: "Book Antiqua";
+        text-align: center;
+        color: rgba(0, 0, 0, 0.8);
+
+        @include max(575px) {
+            font-size: 45px;
+        }
+    }
+
+    &-content {
+        select,
+        input {
+            font-size: 16px;
+            padding: 16px 8px;
+            background-color: #dddfdf;
+            border: none;
+            color: rgba(0, 0, 0, 0.8);
+        }
+
+        input[type="checkbox"] {
+            padding: 0;
+            border-radius: 0;
+
+            &:focus {
+                box-shadow: none;
+            }
+        }
+
+        .form-check-input:checked[type="checkbox"] {
+            background-color: #5DA4D9;
+        }
+
+        .check-label {
+            font-size: 18px;
+            font-weight: 300;
+            color: rgba(0, 0, 0, 0.8);
+            margin-top: -3px;
+        }
+
+        .submit-btn {
+            width: auto;
+            padding: 6px 12px;
+            margin-top: 30px;
+            margin-bottom: 20px;
+        }
+
+
+        .left-form {
+            .heading {
+                font-size: 26px;
+                font-weight: 300;
+                color: rgba(0, 0, 0, 0.8);
+                margin-bottom: 30px;
+            }
+        }
+
+        .order-overview {
+            .top-heading {
+                border-bottom: 1px solid rgba(0, 0, 0, 0.8);
+                padding-bottom: 20px;
+                margin-bottom: 20px;
+                p, span {
+                    font-size: 26px;
+                    font-weight: 300;
+                    color: rgba(0, 0, 0, 0.8);
+                }
+
+                span {
+                    font-size: 24px;
+                }
+            }
+
+            .product-cart {
+                max-height: 500px;
+                overflow: auto;
+                padding-right: 20px;
+        
+                @include max(575px) {
+                    max-height: 60vh;
+                }
+        
+                /* width */
+                &::-webkit-scrollbar {
+                    width: 7px;
+                }
+        
+                /* Track */
+                &::-webkit-scrollbar-track {
+                    background: #E6E6E6;
+                    border-radius: 10px;
+                }
+        
+                /* Handle */
+                &::-webkit-scrollbar-thumb {
+                    background: #B3B3B3;
+                    border-radius: 10px;
+                }
+        
+                /* Handle on hover */
+                &::-webkit-scrollbar-thumb:hover {
+                    background: #555;
+                }
+        
+                .cart-item {
+                    margin-bottom: 40px;
+        
+                    .product-img {
+                        width: 100px;
+                        margin-right: 20px;
+                        flex-shrink: 0;
+        
+                        @include min(992px) {
+                            width: 150px;
+                        }
+        
+                        @include max(575px) {
+                            width: 70px;
+                        }
+
+                        
+                    }
+        
+                    .product {
+                        &-text{
+                            width: calc(100% - 120px);
+                            @include min(992px) {
+                                width: calc(100% - 170px);
+                            }
+                        }
+                        &-description {
+                            font-weight: 300;
+                            margin-bottom: 10px;
+                            color: #000;
+                            display: block;
+
+                            @include min(992px) {
+                                margin-bottom: 30px;
+                                p{
+                                    font-size: 18px;
+                                }
+                                small{
+                                    font-weight: 200;
+                                }
+                            }
+                        }
+        
+                        &-quantity-box {
+                            button {
+                                border: 1.5px solid #000;
+                                width: 20px;
+                                height: 20px;
+                                line-height: 10px;
+        
+                                &:hover {
+                                    color: #fff;
+                                    background-color: rgba(0, 0, 0, 0.8);
+                                }
+                            }
+        
+                            .product-quantity {
+                                margin: 0 10px;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .amount-details {
+                border-top: 1px solid rgba(0, 0, 0, 0.8);
+                margin-top: 30px;
+                padding-top: 20px;
+                @include min(992px) {
+                    font-size: 18px;
+                }
+
+                li {
+                    color: rgba(0, 0, 0, 1);
+                    font-weight: 300;
+                    padding: 10px 0;
+                }
+            }
+        
+        }
+    }
+}

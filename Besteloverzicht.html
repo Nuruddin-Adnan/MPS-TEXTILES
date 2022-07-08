@@ -4,7 +4,7 @@
 <head>
 	<meta charset="UTF-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<title>MPS TEXTiles | Adres Toevoegen</title>
+	<title>MPS TEXTiles | Besteloverzicht</title>
 	<!-- Favicon -->
 	<!-- <link rel="icon" type="image/png" sizes="16x16" href=""> -->
 	<link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
@@ -1269,46 +1269,61 @@
 	</div>
 	<!-- cart section end -->
 
-	<!-- adres-toevoegen Section Start  -->
-	<section class="adres-toevoegen">
+	<!-- besteloverzicht Section Start  -->
+	<section class="besteloverzicht">
 		<div class="container">
-			<h2 class="adres-toevoegen-heading">Adres Toevoegen</h2>
-			<div class="adres-toevoegen-content">
+			<h2 class="besteloverzicht-heading">Besteloverzicht</h2>
+			<div class="besteloverzicht-content">
 				<div class="row gx-5">
-					<div class="col-lg-4">
-						<nav>
-							<ul>
-								<li><a href="#"> Mijn account </a></li>
-								<li><a href="#"> Mijn bestellingen </a></li>
-								<li><a href="#"> Downloads </a></li>
-								<li><a href="#" class="active"> Adresboek </a></li>
-								<li><a href="#"> Accountgegevens </a></li>
-								<li><a href="#"> Opgeslagen betalingsmethoden </a></li>
-								<li><a href="#"> Nieuwsbriefabonnement </a></li>
-								<li><a href="#"> Snel bestellen </a></li>
-							</ul>
-						</nav>
-					</div>
-					<div class="col-lg-8 mt-lg-0 mt-5">
-						<div class="adresgegevens">
-							<h3 class="adresgegevens-heading">Adresgegevens</h3>
-							<form>
-								<div class="row g-4 pe-md-5">
+					<div class="col-lg-6">
+						<form class="left-form">
+							<div class="betaalmethode p-3 p-md-4" style="background-color: #f0f0f0;">
+								<h3 class="heading">Betaalmethode</h3>
+								<div class="row g-4">
 									<div class="col-12">
-										<input type="text" class="w-100" placeholder="Bedrijf">
+										<select class="w-100">
+											<option>iDeal</option>
+											<option>iDeal2</option>
+											<option>iDeal3</option>
+										</select>
 									</div>
 									<div class="col-12">
 										<select class="w-100">
-											<option>Land/regio*</option>
-											<option>Another option</option>
-											<option>Another option</option>
-											<option>Another option</option>
+											<option>Selecteer uw bank</option>
+											<option>Selecteer uw bank 2</option>
+											<option>Selecteer uw bank 3</option>
 										</select>
 									</div>
-									<div class="col-md-9">
+									<div class="col-12">
+										<input type="checkbox" class="form-check-input">
+										<label class="check-label">Gebruiken als standaard
+											factuuradres</label>
+									</div>
+								</div>
+							</div>
+							<div class="p-3 p-md-4 mt-4" style="background-color: #f0f0f0;">
+								<h3 class="heading">Bezorging</h3>
+								<div class="row g-4">
+									<div class="col-12">
+										<select class="w-100">
+											<option>Land/regio</option>
+											<option>Land/regio 2</option>
+											<option>Land/regio 3</option>
+										</select>
+									</div>
+									<div class="col-md-6">
+										<input type="text" class="w-100" placeholder="Voornaam (optioneel)">
+									</div>
+									<div class="col-md-6">
+										<input type="text" class="w-100" placeholder="Achternaam">
+									</div>
+									<div class="col-12">
+										<input type="text" class="w-100" placeholder="Bedrijf (optioneel)">
+									</div>
+									<div class="col-md-8">
 										<input type="text" class="w-100" placeholder="Straatnaam*">
 									</div>
-									<div class="col-md-3">
+									<div class="col-md-4">
 										<input type="text" class="w-100" placeholder="Huisnummer*">
 									</div>
 									<div class="col-md-6">
@@ -1320,32 +1335,214 @@
 									<div class="col-12">
 										<input type="text" class="w-100" placeholder="Telefoonnummer*">
 									</div>
+								</div>
+
+								<h3 class="heading mt-5">Inloggen</h3>
+								<div class="row g-4">
 									<div class="col-12">
-										<input type="checkbox" id="factuuradres" class="form-check-input">
-										<label for="factuuradres" class="check-label">Gebruiken als standaard
-											factuuradres</label>
+										<input type="text" class="w-100" placeholder="Gebruikersnaam">
 									</div>
 									<div class="col-12">
-										<input type="checkbox" id="bezorgadres" class="form-check-input">
-										<label for="bezorgadres" class="check-label">Gebruiken als standaard
-											bezorgadres</label>
+										<input type="text" class="w-100" placeholder="Wachtwoord">
 									</div>
 								</div>
-								<button type="submit" class="btn submit-btn">Adres toevoegen</button>
-							</form>
-							<div class="text-end">
-								<a href="#" class="back-btn">
-									<img src="assets/images/icons/arrow-left.png" alt="icon">
-									Terug
-								</a>
+								<div class="text-center">
+									<button class="btn submit-btn">Inloggen</button>
+								</div>
 							</div>
+						</form>
+					</div>
+					<div class="col-lg-6">
+						<div class="order-overview p-3 p-md-4 h-100" style="background-color: #f0f0f0;">
+							<form>
+								<div class="top-heading">
+									<p>Overzicht van bestelling</p>
+									<span>*00* producten</span>
+								</div>
+								<ul class="product-cart">
+									<li class="cart-item d-flex align-items-center">
+										<div class="product-img">
+											<a href="#"><img src="assets/images/cart/image-1.jpg" alt="product-img" class="img-fluid"></a>
+										</div>
+										<div class="product-text">
+											<a href="#" class="product-description">
+												<p>Doctor Fit Dream Nature | box pillow</p>
+												<p><small>Beige | 140 x 200</small></p>
+												<p><small>ordernr: *0000000000000*</small></p>
+											</a>
+											<div class="d-flex justify-content-between">
+												<p class="product-price">€9.95</p>
+												<div class="d-flex align-items-center product-quantity-box">
+													<button>-</button>
+													<span class="product-quantity">1</span>
+													<button>+</button>
+												</div>
+											</div>
+										</div>
+									</li>
+									<li class="cart-item d-flex align-items-center">
+										<div class="product-img">
+											<a href="#"><img src="assets/images/cart/image-2.png" alt="product-img" class="img-fluid"></a>
+										</div>
+										<div class="product-text">
+											<a href="#" class="product-description">
+												<p>Doctor Fit Dream Nature | box pillow</p>
+												<p><small>Beige | 140 x 200</small></p>
+												<p><small>ordernr: *0000000000000*</small></p>
+											</a>
+											<div class="d-flex justify-content-between">
+												<p class="product-price">€9.95</p>
+												<div class="d-flex align-items-center product-quantity-box">
+													<button>-</button>
+													<span class="product-quantity">1</span>
+													<button>+</button>
+												</div>
+											</div>
+										</div>
+									</li>
+									<li class="cart-item d-flex align-items-center">
+										<div class="product-img">
+											<a href="#"><img src="assets/images/cart/image-1.jpg" alt="product-img" class="img-fluid"></a>
+										</div>
+										<div class="product-text">
+											<a href="#" class="product-description">
+												<p>Doctor Fit Dream Nature | box pillow</p>
+												<p><small>Beige | 140 x 200</small></p>
+												<p><small>ordernr: *0000000000000*</small></p>
+											</a>
+											<div class="d-flex justify-content-between">
+												<p class="product-price">€9.95</p>
+												<div class="d-flex align-items-center product-quantity-box">
+													<button>-</button>
+													<span class="product-quantity">1</span>
+													<button>+</button>
+												</div>
+											</div>
+										</div>
+									</li>
+									<li class="cart-item d-flex align-items-center">
+										<div class="product-img">
+											<a href="#"><img src="assets/images/cart/image-2.png" alt="product-img" class="img-fluid"></a>
+										</div>
+										<div class="product-text">
+											<a href="#" class="product-description">
+												<p>Doctor Fit Dream Nature | box pillow</p>
+												<p><small>Beige | 140 x 200</small></p>
+												<p><small>ordernr: *0000000000000*</small></p>
+											</a>
+											<div class="d-flex justify-content-between">
+												<p class="product-price">€9.95</p>
+												<div class="d-flex align-items-center product-quantity-box">
+													<button>-</button>
+													<span class="product-quantity">1</span>
+													<button>+</button>
+												</div>
+											</div>
+										</div>
+									</li>
+									<li class="cart-item d-flex align-items-center">
+										<div class="product-img">
+											<a href="#"><img src="assets/images/cart/image-2.png" alt="product-img" class="img-fluid"></a>
+										</div>
+										<div class="product-text">
+											<a href="#" class="product-description">
+												<p>Doctor Fit Dream Nature | box pillow</p>
+												<p><small>Beige | 140 x 200</small></p>
+												<p><small>ordernr: *0000000000000*</small></p>
+											</a>
+											<div class="d-flex justify-content-between">
+												<p class="product-price">€9.95</p>
+												<div class="d-flex align-items-center product-quantity-box">
+													<button>-</button>
+													<span class="product-quantity">1</span>
+													<button>+</button>
+												</div>
+											</div>
+										</div>
+									</li>
+									<li class="cart-item d-flex align-items-center">
+										<div class="product-img">
+											<a href="#"><img src="assets/images/cart/image-1.jpg" alt="product-img" class="img-fluid"></a>
+										</div>
+										<div class="product-text">
+											<a href="#" class="product-description">
+												<p>Doctor Fit Dream Nature | box pillow</p>
+												<p><small>Beige | 140 x 200</small></p>
+												<p><small>ordernr: *0000000000000*</small></p>
+											</a>
+											<div class="d-flex justify-content-between">
+												<p class="product-price">€9.95</p>
+												<div class="d-flex align-items-center product-quantity-box">
+													<button>-</button>
+													<span class="product-quantity">1</span>
+													<button>+</button>
+												</div>
+											</div>
+										</div>
+									</li>
+									<li class="cart-item d-flex align-items-center">
+										<div class="product-img">
+											<a href="#"><img src="assets/images/cart/image-2.png" alt="product-img" class="img-fluid"></a>
+										</div>
+										<div class="product-text">
+											<a href="#" class="product-description">
+												<p>Doctor Fit Dream Nature | box pillow</p>
+												<p><small>Beige | 140 x 200</small></p>
+												<p><small>ordernr: *0000000000000*</small></p>
+											</a>
+											<div class="d-flex justify-content-between">
+												<p class="product-price">€9.95</p>
+												<div class="d-flex align-items-center product-quantity-box">
+													<button>-</button>
+													<span class="product-quantity">1</span>
+													<button>+</button>
+												</div>
+											</div>
+										</div>
+									</li>
+								</ul>
+								<ul class="amount-details">
+									<li class="d-flex justify-content-between">
+										<span>Subtotaal</span>
+										<span>€00.00</span>
+									</li>
+									<li class="d-flex justify-content-between">
+										<span>Verzendkosten</span>
+										<span>€00.00</span>
+									</li>
+									<li class="d-flex justify-content-between">
+										<span>BTW</span>
+										<span>€00.00</span>
+									</li>
+									<li class="d-flex justify-content-between">
+										<strong>Totaal</strong>
+										<strong>€00.00</strong>
+									</li>
+								</ul>
+								<div class="d-flex mt-5 mb-4">
+									<div class="flex-shrink-0 me-2">
+										<input type="checkbox" class="form-check-input">
+									</div>
+									<label class="check-label">Ik ga akkoord met de algemene voorwaarden en privacy beleid</label>
+								</div>
+								<div class="d-flex">
+									<div class="flex-shrink-0 me-2">
+										<input type="checkbox" class="form-check-input">
+									</div>
+									<label class="check-label">Ik ga akkoord met de algemene voorwaarden en privacy beleid</label>
+								</div>
+								<div class="text-center">
+									<button class="btn submit-btn">Afrekenen</button>
+								</div>
+							</form>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
+		</div>
 	</section>
-	<!-- adres-toevoegen Section End  -->
+	<!-- besteloverzicht Section End  -->
 
 	<!-- Footer Section Start  -->
 	<footer class="footer">
